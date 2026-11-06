@@ -1,0 +1,1038 @@
+{
+ "META_TREE": [
+  {
+   "id": "n1",
+   "name": "Remarketing Quente",
+   "invest": 3060.29,
+   "leads": 85,
+   "mql": 48,
+   "sql": 29,
+   "venda": 11,
+   "lost": 19,
+   "qlost": 18,
+   "lostReasons": {
+    "Fora do perfil": 4,
+    "(sem motivo preenchido)": 2,
+    "Sem resposta": 7,
+    "Sem orçamento": 3,
+    "Escolheu concorrente": 3
+   },
+   "qualifiedLostReasons": {
+    "Sem orçamento": 4,
+    "Sem resposta": 6,
+    "Fora do perfil": 3,
+    "(sem motivo preenchido)": 2,
+    "Escolheu concorrente": 3
+   },
+   "children": [
+    {
+     "id": "n2",
+     "name": "Lookalike 1% Compradores",
+     "invest": 1663.1,
+     "leads": 47,
+     "mql": 24,
+     "sql": 15,
+     "venda": 5,
+     "lost": 9,
+     "qlost": 8,
+     "lostReasons": {
+      "Fora do perfil": 3,
+      "(sem motivo preenchido)": 2,
+      "Sem resposta": 2,
+      "Sem orçamento": 2
+     },
+     "qualifiedLostReasons": {
+      "Sem orçamento": 1,
+      "Sem resposta": 4,
+      "Fora do perfil": 1,
+      "(sem motivo preenchido)": 1,
+      "Escolheu concorrente": 1
+     },
+     "children": [
+      {
+       "id": "n3",
+       "name": "Carrossel Depoimentos",
+       "invest": 1323.08,
+       "leads": 31,
+       "mql": 19,
+       "sql": 12,
+       "venda": 4,
+       "lost": 5,
+       "qlost": 7,
+       "lostReasons": {
+        "Fora do perfil": 1,
+        "(sem motivo preenchido)": 2,
+        "Sem resposta": 1,
+        "Sem orçamento": 1
+       },
+       "qualifiedLostReasons": {
+        "Sem orçamento": 1,
+        "Sem resposta": 4,
+        "Fora do perfil": 1,
+        "(sem motivo preenchido)": 1
+       }
+      },
+      {
+       "id": "n5",
+       "name": "Vídeo Prova Social",
+       "invest": 340.02,
+       "leads": 16,
+       "mql": 5,
+       "sql": 3,
+       "venda": 1,
+       "lost": 4,
+       "qlost": 1,
+       "lostReasons": {
+        "Fora do perfil": 2,
+        "Sem orçamento": 1,
+        "Sem resposta": 1
+       },
+       "qualifiedLostReasons": {
+        "Escolheu concorrente": 1
+       }
+      }
+     ]
+    },
+    {
+     "id": "n7",
+     "name": "Retargeting 7 dias",
+     "invest": 1397.19,
+     "leads": 38,
+     "mql": 24,
+     "sql": 14,
+     "venda": 6,
+     "lost": 10,
+     "qlost": 10,
+     "lostReasons": {
+      "Sem resposta": 5,
+      "Escolheu concorrente": 3,
+      "Sem orçamento": 1,
+      "Fora do perfil": 1
+     },
+     "qualifiedLostReasons": {
+      "Sem orçamento": 3,
+      "Fora do perfil": 2,
+      "(sem motivo preenchido)": 1,
+      "Escolheu concorrente": 2,
+      "Sem resposta": 2
+     },
+     "children": [
+      {
+       "id": "n8",
+       "name": "Oferta Limitada",
+       "invest": 740.05,
+       "leads": 17,
+       "mql": 9,
+       "sql": 4,
+       "venda": 2,
+       "lost": 8,
+       "qlost": 4,
+       "lostReasons": {
+        "Sem resposta": 3,
+        "Escolheu concorrente": 3,
+        "Sem orçamento": 1,
+        "Fora do perfil": 1
+       },
+       "qualifiedLostReasons": {
+        "Sem orçamento": 2,
+        "Fora do perfil": 1,
+        "(sem motivo preenchido)": 1
+       }
+      },
+      {
+       "id": "n10",
+       "name": "Antes e Depois",
+       "invest": 657.14,
+       "leads": 21,
+       "mql": 15,
+       "sql": 10,
+       "venda": 4,
+       "lost": 2,
+       "qlost": 6,
+       "lostReasons": {
+        "Sem resposta": 2
+       },
+       "qualifiedLostReasons": {
+        "Escolheu concorrente": 2,
+        "Sem resposta": 2,
+        "Fora do perfil": 1,
+        "Sem orçamento": 1
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "n11",
+   "name": "Interesse Amplo",
+   "invest": 5027.66,
+   "leads": 77,
+   "mql": 10,
+   "sql": 6,
+   "venda": 2,
+   "lost": 31,
+   "qlost": 3,
+   "lostReasons": {
+    "(sem motivo preenchido)": 5,
+    "Sem orçamento": 7,
+    "Sem resposta": 5,
+    "Escolheu concorrente": 5,
+    "Fora do perfil": 9
+   },
+   "qualifiedLostReasons": {
+    "Escolheu concorrente": 1,
+    "(sem motivo preenchido)": 1,
+    "Fora do perfil": 1
+   },
+   "children": [
+    {
+     "id": "n12",
+     "name": "Interesse Marketing",
+     "invest": 2861.07,
+     "leads": 45,
+     "mql": 2,
+     "sql": 1,
+     "venda": 0,
+     "lost": 21,
+     "qlost": 1,
+     "lostReasons": {
+      "(sem motivo preenchido)": 4,
+      "Sem orçamento": 5,
+      "Sem resposta": 4,
+      "Escolheu concorrente": 3,
+      "Fora do perfil": 5
+     },
+     "qualifiedLostReasons": {
+      "Escolheu concorrente": 1
+     },
+     "children": [
+      {
+       "id": "n13",
+       "name": "Imagem Institucional",
+       "invest": 1478.35,
+       "leads": 16,
+       "mql": 1,
+       "sql": 1,
+       "venda": 0,
+       "lost": 5,
+       "qlost": 1,
+       "lostReasons": {
+        "(sem motivo preenchido)": 1,
+        "Sem orçamento": 1,
+        "Sem resposta": 1,
+        "Escolheu concorrente": 1,
+        "Fora do perfil": 1
+       },
+       "qualifiedLostReasons": {
+        "Escolheu concorrente": 1
+       }
+      },
+      {
+       "id": "n15",
+       "name": "Vídeo Longo",
+       "invest": 1382.72,
+       "leads": 29,
+       "mql": 1,
+       "sql": 0,
+       "venda": 0,
+       "lost": 16,
+       "qlost": 0,
+       "lostReasons": {
+        "Sem resposta": 3,
+        "(sem motivo preenchido)": 3,
+        "Sem orçamento": 4,
+        "Fora do perfil": 4,
+        "Escolheu concorrente": 2
+       },
+       "qualifiedLostReasons": {}
+      }
+     ]
+    },
+    {
+     "id": "n17",
+     "name": "Interesse Negócios",
+     "invest": 2166.59,
+     "leads": 32,
+     "mql": 8,
+     "sql": 5,
+     "venda": 2,
+     "lost": 10,
+     "qlost": 2,
+     "lostReasons": {
+      "Fora do perfil": 4,
+      "Sem orçamento": 2,
+      "Escolheu concorrente": 2,
+      "Sem resposta": 1,
+      "(sem motivo preenchido)": 1
+     },
+     "qualifiedLostReasons": {
+      "(sem motivo preenchido)": 1,
+      "Fora do perfil": 1
+     },
+     "children": [
+      {
+       "id": "n18",
+       "name": "Carrossel Produto",
+       "invest": 1727.49,
+       "leads": 18,
+       "mql": 4,
+       "sql": 3,
+       "venda": 1,
+       "lost": 7,
+       "qlost": 0,
+       "lostReasons": {
+        "Fora do perfil": 2,
+        "Sem orçamento": 2,
+        "Escolheu concorrente": 2,
+        "Sem resposta": 1
+       },
+       "qualifiedLostReasons": {}
+      },
+      {
+       "id": "n20",
+       "name": "Estático Preço",
+       "invest": 439.1,
+       "leads": 14,
+       "mql": 4,
+       "sql": 2,
+       "venda": 1,
+       "lost": 3,
+       "qlost": 2,
+       "lostReasons": {
+        "Fora do perfil": 2,
+        "(sem motivo preenchido)": 1
+       },
+       "qualifiedLostReasons": {
+        "(sem motivo preenchido)": 1,
+        "Fora do perfil": 1
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "n21",
+   "name": "Teste Replicado",
+   "invest": 1322.75,
+   "leads": 55,
+   "mql": 15,
+   "sql": 5,
+   "venda": 2,
+   "lost": 19,
+   "qlost": 8,
+   "lostReasons": {
+    "Escolheu concorrente": 8,
+    "Fora do perfil": 3,
+    "Sem orçamento": 4,
+    "Sem resposta": 2,
+    "(sem motivo preenchido)": 2
+   },
+   "qualifiedLostReasons": {
+    "Sem orçamento": 3,
+    "Fora do perfil": 2,
+    "(sem motivo preenchido)": 2,
+    "Sem resposta": 1
+   },
+   "children": [
+    {
+     "id": "n22",
+     "name": "Público A",
+     "invest": 975.07,
+     "leads": 12,
+     "mql": 4,
+     "sql": 2,
+     "venda": 2,
+     "lost": 5,
+     "qlost": 2,
+     "lostReasons": {
+      "Escolheu concorrente": 4,
+      "Fora do perfil": 1
+     },
+     "qualifiedLostReasons": {
+      "Sem orçamento": 1,
+      "Fora do perfil": 1
+     },
+     "children": [
+      {
+       "id": "n23",
+       "name": "Ad Replicado",
+       "invest": 975.07,
+       "leads": 12,
+       "mql": 4,
+       "sql": 2,
+       "venda": 2,
+       "lost": 5,
+       "qlost": 2,
+       "lostReasons": {
+        "Escolheu concorrente": 4,
+        "Fora do perfil": 1
+       },
+       "qualifiedLostReasons": {
+        "Sem orçamento": 1,
+        "Fora do perfil": 1
+       }
+      }
+     ]
+    },
+    {
+     "id": "n25",
+     "name": "Público B",
+     "invest": 347.68,
+     "leads": 34,
+     "mql": 7,
+     "sql": 1,
+     "venda": 0,
+     "lost": 11,
+     "qlost": 3,
+     "lostReasons": {
+      "Sem orçamento": 3,
+      "Sem resposta": 2,
+      "(sem motivo preenchido)": 2,
+      "Fora do perfil": 1,
+      "Escolheu concorrente": 3
+     },
+     "qualifiedLostReasons": {
+      "(sem motivo preenchido)": 1,
+      "Fora do perfil": 1,
+      "Sem orçamento": 1
+     },
+     "children": [
+      {
+       "id": "n26",
+       "name": "Ad Replicado",
+       "invest": 347.68,
+       "leads": 34,
+       "mql": 7,
+       "sql": 1,
+       "venda": 0,
+       "lost": 11,
+       "qlost": 3,
+       "lostReasons": {
+        "Sem orçamento": 3,
+        "Sem resposta": 2,
+        "(sem motivo preenchido)": 2,
+        "Fora do perfil": 1,
+        "Escolheu concorrente": 3
+       },
+       "qualifiedLostReasons": {
+        "(sem motivo preenchido)": 1,
+        "Fora do perfil": 1,
+        "Sem orçamento": 1
+       }
+      }
+     ]
+    },
+    {
+     "id": "n48",
+     "name": "(Anúncio replicado em vários públicos/grupos: sem como saber qual gerou o lead)",
+     "invest": 0.0,
+     "leads": 9,
+     "mql": 4,
+     "sql": 2,
+     "venda": 0,
+     "lost": 3,
+     "qlost": 3,
+     "lostReasons": {
+      "Escolheu concorrente": 1,
+      "Sem orçamento": 1,
+      "Fora do perfil": 1
+     },
+     "qualifiedLostReasons": {
+      "Sem resposta": 1,
+      "(sem motivo preenchido)": 1,
+      "Sem orçamento": 1
+     },
+     "synthetic": true
+    }
+   ]
+  },
+  {
+   "id": "n49",
+   "name": "(Campanha da UTM sem gasto no período / não encontrada na mídia)",
+   "invest": 0.0,
+   "leads": 4,
+   "mql": 1,
+   "sql": 1,
+   "venda": 1,
+   "lost": 1,
+   "qlost": 0,
+   "lostReasons": {
+    "Fora do perfil": 1
+   },
+   "qualifiedLostReasons": {},
+   "synthetic": true,
+   "children": [
+    {
+     "id": "n50",
+     "name": "Campanha Antiga Excluída",
+     "invest": 0.0,
+     "leads": 4,
+     "mql": 1,
+     "sql": 1,
+     "venda": 1,
+     "lost": 1,
+     "qlost": 0,
+     "lostReasons": {
+      "Fora do perfil": 1
+     },
+     "qualifiedLostReasons": {},
+     "synthetic": true
+    }
+   ]
+  },
+  {
+   "id": "n54",
+   "name": "(UTM quebrada: macro não substituída)",
+   "invest": 0.0,
+   "leads": 3,
+   "mql": 2,
+   "sql": 2,
+   "venda": 0,
+   "lost": 1,
+   "qlost": 2,
+   "lostReasons": {
+    "Sem orçamento": 1
+   },
+   "qualifiedLostReasons": {
+    "(sem motivo preenchido)": 1,
+    "Sem orçamento": 1
+   },
+   "synthetic": true
+  }
+ ],
+ "GOOGLE_TREE": [
+  {
+   "id": "n27",
+   "name": "Search Marca",
+   "invest": 1332.59,
+   "leads": 33,
+   "mql": 22,
+   "sql": 16,
+   "venda": 8,
+   "lost": 8,
+   "qlost": 12,
+   "lostReasons": {
+    "(sem motivo preenchido)": 2,
+    "Sem orçamento": 2,
+    "Fora do perfil": 2,
+    "Escolheu concorrente": 1,
+    "Sem resposta": 1
+   },
+   "qualifiedLostReasons": {
+    "Escolheu concorrente": 2,
+    "Sem orçamento": 1,
+    "Sem resposta": 2,
+    "Fora do perfil": 4,
+    "(sem motivo preenchido)": 3
+   },
+   "children": [
+    {
+     "id": "n28",
+     "name": "Marca Exata",
+     "invest": 1332.59,
+     "leads": 33,
+     "mql": 22,
+     "sql": 16,
+     "venda": 8,
+     "lost": 8,
+     "qlost": 12,
+     "lostReasons": {
+      "(sem motivo preenchido)": 2,
+      "Sem orçamento": 2,
+      "Fora do perfil": 2,
+      "Escolheu concorrente": 1,
+      "Sem resposta": 1
+     },
+     "qualifiedLostReasons": {
+      "Escolheu concorrente": 2,
+      "Sem orçamento": 1,
+      "Sem resposta": 2,
+      "Fora do perfil": 4,
+      "(sem motivo preenchido)": 3
+     },
+     "children": [
+      {
+       "id": "n29",
+       "name": "ad01",
+       "invest": 501.43,
+       "leads": 21,
+       "mql": 15,
+       "sql": 11,
+       "venda": 4,
+       "lost": 4,
+       "qlost": 9,
+       "lostReasons": {
+        "(sem motivo preenchido)": 1,
+        "Sem orçamento": 1,
+        "Fora do perfil": 2
+       },
+       "qualifiedLostReasons": {
+        "Escolheu concorrente": 1,
+        "Sem orçamento": 1,
+        "Sem resposta": 2,
+        "Fora do perfil": 3,
+        "(sem motivo preenchido)": 2
+       }
+      },
+      {
+       "id": "n31",
+       "name": "ad02",
+       "invest": 831.16,
+       "leads": 12,
+       "mql": 7,
+       "sql": 5,
+       "venda": 4,
+       "lost": 4,
+       "qlost": 3,
+       "lostReasons": {
+        "Sem orçamento": 1,
+        "Escolheu concorrente": 1,
+        "(sem motivo preenchido)": 1,
+        "Sem resposta": 1
+       },
+       "qualifiedLostReasons": {
+        "Fora do perfil": 1,
+        "Escolheu concorrente": 1,
+        "(sem motivo preenchido)": 1
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "n32",
+   "name": "Search Serviço",
+   "invest": 1756.55,
+   "leads": 67,
+   "mql": 24,
+   "sql": 10,
+   "venda": 2,
+   "lost": 24,
+   "qlost": 15,
+   "lostReasons": {
+    "Sem orçamento": 6,
+    "Sem resposta": 7,
+    "Escolheu concorrente": 5,
+    "Fora do perfil": 4,
+    "(sem motivo preenchido)": 2
+   },
+   "qualifiedLostReasons": {
+    "Sem orçamento": 4,
+    "Sem resposta": 2,
+    "Fora do perfil": 3,
+    "Escolheu concorrente": 5,
+    "(sem motivo preenchido)": 1
+   },
+   "children": [
+    {
+     "id": "n33",
+     "name": "Serviço Principal",
+     "invest": 759.18,
+     "leads": 41,
+     "mql": 13,
+     "sql": 6,
+     "venda": 1,
+     "lost": 16,
+     "qlost": 9,
+     "lostReasons": {
+      "Sem orçamento": 3,
+      "Sem resposta": 6,
+      "Escolheu concorrente": 3,
+      "Fora do perfil": 3,
+      "(sem motivo preenchido)": 1
+     },
+     "qualifiedLostReasons": {
+      "Sem orçamento": 4,
+      "Sem resposta": 1,
+      "Fora do perfil": 2,
+      "Escolheu concorrente": 2
+     },
+     "children": [
+      {
+       "id": "n34",
+       "name": "ad01",
+       "invest": 280.52,
+       "leads": 21,
+       "mql": 9,
+       "sql": 3,
+       "venda": 0,
+       "lost": 5,
+       "qlost": 6,
+       "lostReasons": {
+        "Sem orçamento": 2,
+        "Sem resposta": 1,
+        "Escolheu concorrente": 1,
+        "Fora do perfil": 1
+       },
+       "qualifiedLostReasons": {
+        "Sem orçamento": 2,
+        "Sem resposta": 1,
+        "Fora do perfil": 1,
+        "Escolheu concorrente": 2
+       }
+      },
+      {
+       "id": "n36",
+       "name": "ad02",
+       "invest": 478.66,
+       "leads": 20,
+       "mql": 4,
+       "sql": 3,
+       "venda": 1,
+       "lost": 11,
+       "qlost": 3,
+       "lostReasons": {
+        "Sem orçamento": 1,
+        "Escolheu concorrente": 2,
+        "Sem resposta": 5,
+        "(sem motivo preenchido)": 1,
+        "Fora do perfil": 2
+       },
+       "qualifiedLostReasons": {
+        "Sem orçamento": 2,
+        "Fora do perfil": 1
+       }
+      }
+     ]
+    },
+    {
+     "id": "n38",
+     "name": "Serviço Cidade",
+     "invest": 997.37,
+     "leads": 26,
+     "mql": 11,
+     "sql": 4,
+     "venda": 1,
+     "lost": 8,
+     "qlost": 6,
+     "lostReasons": {
+      "Escolheu concorrente": 2,
+      "Sem orçamento": 3,
+      "(sem motivo preenchido)": 1,
+      "Sem resposta": 1,
+      "Fora do perfil": 1
+     },
+     "qualifiedLostReasons": {
+      "Fora do perfil": 1,
+      "(sem motivo preenchido)": 1,
+      "Escolheu concorrente": 3,
+      "Sem resposta": 1
+     },
+     "children": [
+      {
+       "id": "n39",
+       "name": "ad01",
+       "invest": 997.37,
+       "leads": 26,
+       "mql": 11,
+       "sql": 4,
+       "venda": 1,
+       "lost": 8,
+       "qlost": 6,
+       "lostReasons": {
+        "Escolheu concorrente": 2,
+        "Sem orçamento": 3,
+        "(sem motivo preenchido)": 1,
+        "Sem resposta": 1,
+        "Fora do perfil": 1
+       },
+       "qualifiedLostReasons": {
+        "Fora do perfil": 1,
+        "(sem motivo preenchido)": 1,
+        "Escolheu concorrente": 3,
+        "Sem resposta": 1
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "n40",
+   "name": "Display Genérico",
+   "invest": 876.68,
+   "leads": 10,
+   "mql": 0,
+   "sql": 0,
+   "venda": 0,
+   "lost": 8,
+   "qlost": 0,
+   "lostReasons": {
+    "(sem motivo preenchido)": 4,
+    "Escolheu concorrente": 1,
+    "Sem resposta": 1,
+    "Sem orçamento": 2
+   },
+   "qualifiedLostReasons": {},
+   "children": [
+    {
+     "id": "n41",
+     "name": "Afinidade",
+     "invest": 876.68,
+     "leads": 10,
+     "mql": 0,
+     "sql": 0,
+     "venda": 0,
+     "lost": 8,
+     "qlost": 0,
+     "lostReasons": {
+      "(sem motivo preenchido)": 4,
+      "Escolheu concorrente": 1,
+      "Sem resposta": 1,
+      "Sem orçamento": 2
+     },
+     "qualifiedLostReasons": {},
+     "children": [
+      {
+       "id": "n42",
+       "name": "ad01",
+       "invest": 876.68,
+       "leads": 10,
+       "mql": 0,
+       "sql": 0,
+       "venda": 0,
+       "lost": 8,
+       "qlost": 0,
+       "lostReasons": {
+        "(sem motivo preenchido)": 4,
+        "Escolheu concorrente": 1,
+        "Sem resposta": 1,
+        "Sem orçamento": 2
+       },
+       "qualifiedLostReasons": {}
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "GOOGLE_KEYWORDS": [
+  {
+   "id": "n43",
+   "name": "acme consultoria",
+   "invest": 156.99,
+   "leads": 13,
+   "mql": 10,
+   "sql": 8,
+   "venda": 4,
+   "lost": 2,
+   "qlost": 5,
+   "lostReasons": {
+    "(sem motivo preenchido)": 1,
+    "Fora do perfil": 1
+   },
+   "qualifiedLostReasons": {
+    "Sem orçamento": 1,
+    "Sem resposta": 1,
+    "Fora do perfil": 1,
+    "(sem motivo preenchido)": 2
+   }
+  },
+  {
+   "id": "n44",
+   "name": "acme telefone",
+   "invest": 319.28,
+   "leads": 20,
+   "mql": 12,
+   "sql": 8,
+   "venda": 4,
+   "lost": 6,
+   "qlost": 7,
+   "lostReasons": {
+    "Sem orçamento": 2,
+    "Fora do perfil": 1,
+    "Escolheu concorrente": 1,
+    "(sem motivo preenchido)": 1,
+    "Sem resposta": 1
+   },
+   "qualifiedLostReasons": {
+    "Escolheu concorrente": 2,
+    "Sem resposta": 1,
+    "Fora do perfil": 3,
+    "(sem motivo preenchido)": 1
+   }
+  },
+  {
+   "id": "n45",
+   "name": "consultoria financeira",
+   "invest": 416.15,
+   "leads": 22,
+   "mql": 5,
+   "sql": 3,
+   "venda": 1,
+   "lost": 11,
+   "qlost": 3,
+   "lostReasons": {
+    "Sem orçamento": 1,
+    "Sem resposta": 4,
+    "Escolheu concorrente": 3,
+    "Fora do perfil": 3
+   },
+   "qualifiedLostReasons": {
+    "Escolheu concorrente": 1,
+    "Sem orçamento": 2
+   }
+  },
+  {
+   "id": "n46",
+   "name": "consultoria para empresas",
+   "invest": 62.86,
+   "leads": 19,
+   "mql": 8,
+   "sql": 3,
+   "venda": 0,
+   "lost": 5,
+   "qlost": 6,
+   "lostReasons": {
+    "Sem orçamento": 2,
+    "Sem resposta": 2,
+    "(sem motivo preenchido)": 1
+   },
+   "qualifiedLostReasons": {
+    "Sem orçamento": 2,
+    "Sem resposta": 1,
+    "Fora do perfil": 2,
+    "Escolheu concorrente": 1
+   }
+  },
+  {
+   "id": "n47",
+   "name": "consultoria financeira campinas",
+   "invest": 414.56,
+   "leads": 26,
+   "mql": 11,
+   "sql": 4,
+   "venda": 1,
+   "lost": 8,
+   "qlost": 6,
+   "lostReasons": {
+    "Escolheu concorrente": 2,
+    "Sem orçamento": 3,
+    "(sem motivo preenchido)": 1,
+    "Sem resposta": 1,
+    "Fora do perfil": 1
+   },
+   "qualifiedLostReasons": {
+    "Fora do perfil": 1,
+    "(sem motivo preenchido)": 1,
+    "Escolheu concorrente": 3,
+    "Sem resposta": 1
+   }
+  }
+ ],
+ "LOSS_REASONS": [
+  {
+   "name": "Fora do perfil",
+   "qty": 23
+  },
+  {
+   "name": "(sem motivo preenchido)",
+   "qty": 17
+  },
+  {
+   "name": "Sem resposta",
+   "qty": 23
+  },
+  {
+   "name": "Sem orçamento",
+   "qty": 25
+  },
+  {
+   "name": "Escolheu concorrente",
+   "qty": 23
+  }
+ ],
+ "QUALIFIED_LOST_REASONS": [
+  {
+   "name": "Sem orçamento",
+   "qty": 13
+  },
+  {
+   "name": "Sem resposta",
+   "qty": 11
+  },
+  {
+   "name": "Fora do perfil",
+   "qty": 13
+  },
+  {
+   "name": "(sem motivo preenchido)",
+   "qty": 10
+  },
+  {
+   "name": "Escolheu concorrente",
+   "qty": 11
+  }
+ ],
+ "por_mes": [
+  {
+   "mes": "2026-08",
+   "mql": 60,
+   "sql": 31,
+   "venda": 15,
+   "lost": 51,
+   "leads": 156
+  },
+  {
+   "mes": "2026-09",
+   "mql": 62,
+   "sql": 38,
+   "venda": 11,
+   "lost": 60,
+   "leads": 178
+  }
+ ],
+ "totais": {
+  "investimento": {
+   "meta": 9410.7,
+   "google": 3965.82
+  },
+  "leads": 334,
+  "mql": 122,
+  "sql": 69,
+  "venda": 26,
+  "desqualificados": 111,
+  "qualificados_perdidos": 58,
+  "em_aberto": 101
+ },
+ "qualidade": {
+  "leads_no_crm": 348,
+  "pagos": 334,
+  "campanha_sem_match": 4,
+  "utm_quebrada": 3,
+  "sem_utm": 12,
+  "teste": 2,
+  "mql_fora_da_arvore": 4,
+  "perdidos_sem_motivo": 27,
+  "leads_com_historico": 334,
+  "sem_historico": false
+ },
+ "meta": {
+  "cliente": "Cliente Demo",
+  "crm": "Planilha do CRM (demonstração)",
+  "periodo": {
+   "inicio": "2026-08-01",
+   "fim": "2026-09-30"
+  },
+  "notas": {
+   "selo": "Exemplo: dado fictício",
+   "geral": "",
+   "qualificacao": "Texto de leitura da rodada: o que escalar, o que cortar e por quê. <strong>Aceita HTML.</strong>",
+   "qualificados_perdidos": "Leitura de quem qualificou e não fechou: costuma ser follow-up comercial, não mídia.",
+   "desqualificacao": "",
+   "secoes_extras_geral": ""
+  },
+  "etapas": {
+   "mql": "MQL",
+   "sql": "Reunião Agendada",
+   "venda": [
+    "Venda ganha"
+   ],
+   "rotulo_sql": "SQL",
+   "rotulo_venda": "Venda"
+  }
+ }
+}

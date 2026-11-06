@@ -1,0 +1,137 @@
+﻿Tipo Relatório;Motivo Perdemos;Razão;Telefone;Cidade;Bairro;Segmento;Campanha;Status Prospecção;Status Contrato;Plano Vendido
+LEADS SEM VIABILIDADE;;Cliente teste 000;(20) 99000-1569;Cidade Beta;Vila Nova;Sem viabilidade no local;Google LP;;;
+LEADS SEM VIABILIDADE;;Cliente teste 001;(20) 99000-4007;Cidade Beta;Vila Nova;Sem viabilidade no local;Google LP;;;
+LEADS SEM VIABILIDADE;;Cliente teste 004;(20) 99000-3125;Cidade Alfa;Centro;Sem viabilidade no local;Google LP;;;
+LEADS SEM VIABILIDADE;;Cliente teste 005;(20) 99000-2175;Cidade Beta;Centro;Sem viabilidade no local;Google LP;;;
+NEGOCIAÇÕES EM ANDAMENTO;;Cliente teste 008;(20) 99000-3979;Cidade Beta;Centro;;Google LP;;;
+LEADS SEM VIABILIDADE;;Cliente teste 010;(20) 99000-0704;Cidade Beta;Vila Nova;Sem viabilidade no local;Google LP;;;
+LEADS SEM VIABILIDADE;;Cliente teste 012;(20) 99000-2979;Cidade Alfa;Bairro Norte;Sem viabilidade no local;Google LP;;;
+NEGOCIAÇÕES PERDEMOS;CLIENTE OPTOU POR NÃO CONTRATAR;Cliente teste 013;(20) 99000-1338;Cidade Alfa;Bairro Sul;;Google LP;;;
+NEGOCIAÇÕES EM ANDAMENTO;;Cliente teste 014;(20) 99000-4187;Cidade Gama;Jardim;;Google LP;;;
+LEADS SEM VIABILIDADE;;Cliente teste 015;(20) 99000-4149;Cidade Alfa;Centro;Sem viabilidade no local;Google LP;;;
+LEADS SEM VIABILIDADE;;Cliente teste 016;(20) 99000-4329;Cidade Beta;Vila Nova;Sem viabilidade no local;Google LP;;;
+LEADS SEM ENDEREÇO OU VIABILIDADE CONFIRMADA;;Cliente teste 020;(20) 99000-0087;Cidade Delta;Distrito 2;;Google LP;;;
+LEADS SEM VIABILIDADE;;Cliente teste 021;(20) 99000-1366;Cidade Alfa;Bairro Sul;Sem viabilidade no local;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 025;(20) 99000-0764;Cidade Beta;Centro;;Google LP;;Pre-contrato;1G
+NEGOCIAÇÕES EM ANDAMENTO;;Cliente teste 026;(20) 99000-3195;Cidade Alfa;Bairro Norte;;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 028;(20) 99000-2924;Cidade Alfa;Centro;;Google LP;;Ativo;600M
+LEADS SEM VIABILIDADE;;Cliente teste 029;(20) 99000-2665;Cidade Beta;Vila Nova;Sem viabilidade no local;Google LP;;;
+NEGOCIAÇÕES EM ANDAMENTO;;Cliente teste 030;(20) 99000-2318;Cidade Alfa;Centro;;Google LP;;;
+LEADS SEM VIABILIDADE;;Cliente teste 032;(20) 99000-1094;Cidade Beta;Centro;Sem viabilidade no local;Google LP;;;
+LEADS SEM VIABILIDADE;;Cliente teste 033;(20) 99000-1618;Cidade Alfa;Centro;Sem viabilidade no local;Google LP;;;
+NEGOCIAÇÕES EM ANDAMENTO;;Cliente teste 035;(20) 99000-1883;Cidade Alfa;Centro;;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 036;(20) 99000-0143;Cidade Alfa;Bairro Norte;;Google LP;;Desistiu;1G
+NEGOCIAÇÕES EM ANDAMENTO;;Cliente teste 037;(20) 99000-3541;Cidade Beta;Vila Nova;;Google LP;;;
+LEADS SEM VIABILIDADE;;Cliente teste 038;(20) 99000-2610;Cidade Alfa;Centro;Sem viabilidade no local;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 041;(20) 99000-3864;Cidade Alfa;Bairro Norte;;Google LP;;Desistiu;600M
+NEGOCIAÇÕES EM ANDAMENTO;;Cliente teste 042;(20) 99000-3007;Cidade Beta;Centro;;Google LP;;;
+LEADS SEM VIABILIDADE;;Cliente teste 044;(20) 99000-2608;Cidade Delta;Distrito 1;Sem viabilidade no local;Google LP;;;
+LEADS SEM VIABILIDADE;;Cliente teste 047;(20) 99000-3909;Cidade Alfa;Bairro Sul;Sem viabilidade no local;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 049;(20) 99000-1319;Cidade Alfa;Bairro Sul;;Google LP;;Pre-contrato;600M
+NEGOCIAÇÕES PERDEMOS;NÃO APROVADO GRATUIDADE;Cliente teste 050;(20) 99000-2546;Cidade Delta;Distrito 2;;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 052;(20) 99000-3269;Cidade Delta;Distrito 1;;Google LP;;Desistiu;600M
+LEADS SEM VIABILIDADE;;Cliente teste 055;(20) 99000-0741;Cidade Alfa;Bairro Norte;Sem viabilidade no local;Google LP;;;
+LEADS SEM VIABILIDADE;;Cliente teste 057;(20) 99000-2961;Cidade Gama;Centro;Sem viabilidade no local;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 058;(20) 99000-0469;Cidade Alfa;Centro;;Google LP;;Ativo;600M
+LEADS SEM VIABILIDADE;;Cliente teste 059;(20) 99000-2590;Cidade Alfa;Bairro Sul;Sem viabilidade no local;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 060;(20) 99000-3722;Cidade Alfa;Bairro Norte;;Google LP;;Ativo;1G
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 062;(20) 99000-3780;Cidade Alfa;Bairro Norte;;Google LP;;Pre-contrato;600M
+NEGOCIAÇÕES PERDEMOS;PRAZO DE INSTALAÇÃO;Cliente teste 063;(20) 99000-1188;Cidade Delta;Distrito 1;;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 066;(20) 99000-4268;Cidade Gama;Centro;;Google LP;;Ativo;1G
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 067;(20) 99000-0459;Cidade Alfa;Centro;;Google LP;;Ativo;1G
+NEGOCIAÇÕES PERDEMOS;CLIENTE OPTOU POR NÃO CONTRATAR;Cliente teste 068;(20) 99000-2296;Cidade Gama;Jardim;;Google LP;;;
+NEGOCIAÇÕES EM ANDAMENTO;;Cliente teste 069;(20) 99000-3798;Cidade Alfa;Bairro Norte;;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 070;(20) 99000-0598;Cidade Alfa;Bairro Norte;;Google LP;;Ativo;600M
+NEGOCIAÇÕES EM ANDAMENTO;;Cliente teste 071;(20) 99000-4209;Cidade Alfa;Bairro Norte;;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 072;(20) 99000-3329;Cidade Beta;Centro;;Google LP;;Ativo;1G
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 073;(20) 99000-1727;Cidade Gama;Jardim;;Google LP;;Ativo;1G
+NEGOCIAÇÕES EM ANDAMENTO;;Cliente teste 075;(20) 99000-1183;Cidade Beta;Vila Nova;;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 076;(20) 99000-0180;Cidade Alfa;Bairro Norte;;Google LP;;Ativo;1G
+NEGOCIAÇÕES EM ANDAMENTO;;Cliente teste 077;(20) 99000-1257;Cidade Alfa;Bairro Sul;;Google LP;;;
+LEADS SEM ENDEREÇO OU VIABILIDADE CONFIRMADA;;Cliente teste 078;(20) 99000-2422;Cidade Delta;Distrito 1;Lead Duplicado;Google LP;;;
+NEGOCIAÇÕES PERDEMOS;PRAZO DE INSTALAÇÃO;Cliente teste 081;(20) 99000-0751;Cidade Beta;Vila Nova;;Google LP;;;
+LEADS SEM ENDEREÇO OU VIABILIDADE CONFIRMADA;;Cliente teste 083;(20) 99000-1951;Cidade Beta;Vila Nova;Lead Duplicado;Google LP;;;
+LEADS SEM VIABILIDADE;;Cliente teste 084;(20) 99000-2726;Cidade Beta;Vila Nova;Sem viabilidade no local;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 085;(20) 99000-0909;Cidade Gama;Centro;;Google LP;;Ativo;1G
+NEGOCIAÇÕES PERDEMOS;PRAZO DE INSTALAÇÃO;Cliente teste 086;(20) 99000-3144;Cidade Alfa;Bairro Norte;;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 087;(20) 99000-3505;Cidade Alfa;Bairro Norte;;Google LP;;Pre-contrato;600M
+NEGOCIAÇÕES EM ANDAMENTO;;Cliente teste 090;(20) 99000-3515;Cidade Alfa;Bairro Norte;;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 091;(20) 99000-4234;Cidade Delta;Distrito 2;;Google LP;;Pre-contrato;1G
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 093;(20) 99000-3089;Cidade Alfa;Bairro Sul;;Google LP;;Desistiu;600M
+LEADS SEM VIABILIDADE;;Cliente teste 094;(20) 99000-2909;Cidade Alfa;Centro;Sem viabilidade no local;Google LP;;;
+LEADS SEM VIABILIDADE;;Cliente teste 095;(20) 99000-1990;Cidade Alfa;Bairro Sul;Sem viabilidade no local;Google LP;;;
+LEADS SEM VIABILIDADE;;Cliente teste 096;(20) 99000-3599;Cidade Alfa;Centro;Sem viabilidade no local;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 097;(20) 99000-2354;Cidade Alfa;Bairro Norte;;Google LP;;Ativo;1G
+LEADS SEM VIABILIDADE;;Cliente teste 098;(20) 99000-3021;Cidade Alfa;Bairro Norte;Sem viabilidade no local;Google LP;;;
+LEADS SEM ENDEREÇO OU VIABILIDADE CONFIRMADA;;Cliente teste 099;(20) 99000-1812;Cidade Alfa;Centro;Ja e Cliente;Google LP;;;
+LEADS SEM VIABILIDADE;;Cliente teste 100;(20) 99000-3153;Cidade Alfa;Bairro Sul;Sem viabilidade no local;Google LP;;;
+NEGOCIAÇÕES EM ANDAMENTO;;Cliente teste 102;(20) 99000-2134;Cidade Gama;Jardim;;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 103;(20) 99000-2431;Cidade Alfa;Bairro Sul;;Google LP;;Ativo;1G
+LEADS SEM VIABILIDADE;;Cliente teste 105;(20) 99000-3158;Cidade Gama;Centro;Sem viabilidade no local;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 106;(20) 99000-3171;Cidade Alfa;Bairro Sul;;Google LP;;Pre-contrato;1G
+LEADS SEM ENDEREÇO OU VIABILIDADE CONFIRMADA;;Cliente teste 107;(20) 99000-0496;Cidade Alfa;Centro;;Google LP;;;
+NEGOCIAÇÕES PERDEMOS;NÃO APROVADO GRATUIDADE;Cliente teste 111;(20) 99000-1356;Cidade Alfa;Centro;;Google LP;;;
+NEGOCIAÇÕES EM ANDAMENTO;;Cliente teste 112;(20) 99000-0382;Cidade Gama;Centro;;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 113;(20) 99000-0819;Cidade Beta;Vila Nova;;Google LP;;Ativo;1G
+NEGOCIAÇÕES EM ANDAMENTO;;Cliente teste 114;(20) 99000-0194;Cidade Gama;Jardim;;Google LP;;;
+NEGOCIAÇÕES PERDEMOS;CLIENTE OPTOU POR NÃO CONTRATAR;Cliente teste 115;(20) 99000-2806;Cidade Alfa;Bairro Norte;;Google LP;;;
+LEADS SEM VIABILIDADE;;Cliente teste 116;(20) 99000-2862;Cidade Alfa;Centro;Sem viabilidade no local;Google LP;;;
+LEADS SEM VIABILIDADE;;Cliente teste 117;(20) 99000-1960;Cidade Delta;Distrito 1;Sem viabilidade no local;Google LP;;;
+LEADS SEM VIABILIDADE;;Cliente teste 118;(20) 99000-0856;Cidade Alfa;Bairro Sul;Sem viabilidade no local;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 119;(20) 99000-1385;Cidade Alfa;Bairro Sul;;Google LP;;Ativo;1G
+NEGOCIAÇÕES EM ANDAMENTO;;Cliente teste 122;(20) 99000-4300;Cidade Beta;Vila Nova;;Google LP;;;
+LEADS SEM ENDEREÇO OU VIABILIDADE CONFIRMADA;;Cliente teste 123;(20) 99000-3895;Cidade Beta;Centro;Ja e Cliente;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 124;(20) 99000-3406;Cidade Alfa;Bairro Norte;;Google LP;;Ativo;600M
+NEGOCIAÇÕES PERDEMOS;PRAZO DE INSTALAÇÃO;Cliente teste 127;(20) 99000-2672;Cidade Alfa;Centro;;Google LP;;;
+NEGOCIAÇÕES EM ANDAMENTO;;Cliente teste 128;(20) 99000-2362;Cidade Alfa;Bairro Norte;;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 129;(20) 99000-1536;Cidade Alfa;Centro;;Google LP;;Ativo;600M
+LEADS SEM VIABILIDADE;;Cliente teste 131;(20) 99000-0609;Cidade Delta;Distrito 1;Sem viabilidade no local;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 132;(20) 99000-0686;Cidade Alfa;Bairro Norte;;Google LP;;Pre-contrato;1G
+LEADS SEM VIABILIDADE;;Cliente teste 133;(20) 99000-0548;Cidade Alfa;Bairro Norte;Sem viabilidade no local;Google LP;;;
+LEADS SEM VIABILIDADE;;Cliente teste 135;(20) 99000-0846;Cidade Alfa;Bairro Sul;Sem viabilidade no local;Google LP;;;
+LEADS SEM VIABILIDADE;;Cliente teste 137;(20) 99000-1403;Cidade Alfa;Bairro Sul;Sem viabilidade no local;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 138;(20) 99000-3839;Cidade Alfa;Centro;;Google LP;;Ativo;600M
+LEADS SEM VIABILIDADE;;Cliente teste 139;(20) 99000-3771;Cidade Alfa;Centro;Sem viabilidade no local;Google LP;;;
+NEGOCIAÇÕES EM ANDAMENTO;;Cliente teste 141;(20) 99000-0107;Cidade Alfa;Bairro Norte;;Google LP;;;
+NEGOCIAÇÕES EM ANDAMENTO;;Cliente teste 143;(20) 99000-0242;Cidade Beta;Centro;;Google LP;;;
+LEADS SEM VIABILIDADE;;Cliente teste 144;(20) 99000-0958;Cidade Delta;Distrito 2;Sem viabilidade no local;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 145;(20) 99000-1582;Cidade Alfa;Bairro Sul;;Google LP;;Ativo;1G
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 146;(20) 99000-3473;Cidade Beta;Vila Nova;;Google LP;;Pre-contrato;600M
+NEGOCIAÇÕES EM ANDAMENTO;;Cliente teste 147;(20) 99000-4013;Cidade Delta;Distrito 1;;Google LP;;;
+NEGOCIAÇÕES PERDEMOS;CLIENTE OPTOU POR NÃO CONTRATAR;Cliente teste 149;(20) 99000-1890;Cidade Delta;Distrito 1;;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 150;(20) 99000-3121;Cidade Beta;Vila Nova;;Google LP;;Pre-contrato;1G
+NEGOCIAÇÕES EM ANDAMENTO;;Cliente teste 152;(20) 99000-2528;Cidade Delta;Distrito 1;;Google LP;;;
+NEGOCIAÇÕES EM ANDAMENTO;;Cliente teste 156;(20) 99000-2157;Cidade Alfa;Centro;;Google LP;;;
+LEADS SEM VIABILIDADE;;Cliente teste 158;(20) 99000-1483;Cidade Alfa;Centro;Sem viabilidade no local;Google LP;;;
+NEGOCIAÇÕES EM ANDAMENTO;;Cliente teste 159;(20) 99000-2866;Cidade Delta;Distrito 1;;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 161;(20) 99000-2458;Cidade Beta;Vila Nova;;Google LP;;Pre-contrato;1G
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 163;(20) 99000-4343;Cidade Beta;Centro;;Google LP;;Ativo;600M
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 166;(20) 99000-3365;Cidade Beta;Centro;;Google LP;;Pre-contrato;600M
+NEGOCIAÇÕES EM ANDAMENTO;;Cliente teste 167;(20) 99000-2490;Cidade Alfa;Centro;;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 168;(20) 99000-1954;Cidade Alfa;Bairro Norte;;Google LP;;Pre-contrato;1G
+LEADS SEM VIABILIDADE;;Cliente teste 169;(20) 99000-2389;Cidade Gama;Centro;Sem viabilidade no local;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 170;(20) 99000-2052;Cidade Beta;Centro;;Google LP;;Ativo;1G
+NEGOCIAÇÕES EM ANDAMENTO;;Cliente teste 171;(20) 99000-2220;Cidade Alfa;Bairro Sul;;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 173;(20) 99000-3309;Cidade Alfa;Bairro Norte;;Google LP;;Pre-contrato;600M
+LEADS SEM VIABILIDADE;;Cliente teste 175;(20) 99000-2082;Cidade Alfa;Centro;Sem viabilidade no local;Google LP;;;
+NEGOCIAÇÕES EM ANDAMENTO;;Cliente teste 177;(20) 99000-2121;Cidade Delta;Distrito 2;;Google LP;;;
+LEADS SEM ENDEREÇO OU VIABILIDADE CONFIRMADA;;Cliente teste 178;(20) 99000-3944;Cidade Gama;Centro;Ja e Cliente;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 180;(20) 99000-3566;Cidade Gama;Centro;;Google LP;;Pre-contrato;1G
+LEADS SEM VIABILIDADE;;Cliente teste 181;(20) 99000-3439;Cidade Alfa;Bairro Norte;Sem viabilidade no local;Google LP;;;
+NEGOCIAÇÕES EM ANDAMENTO;;Cliente teste 182;(20) 99000-1926;Cidade Alfa;Bairro Sul;;Google LP;;;
+NEGOCIAÇÕES EM ANDAMENTO;;Cliente teste 184;(20) 99000-0646;Cidade Alfa;Centro;;Google LP;;;
+NEGOCIAÇÕES EM ANDAMENTO;;Cliente teste 185;(20) 99000-1043;Cidade Beta;Vila Nova;;Google LP;;;
+LEADS SEM ENDEREÇO OU VIABILIDADE CONFIRMADA;;Cliente teste 186;(20) 99000-2889;Cidade Delta;Distrito 1;Ja e Cliente;Google LP;;;
+NEGOCIAÇÕES EM ANDAMENTO;;Cliente teste 187;(20) 99000-2101;Cidade Alfa;Bairro Norte;;Google LP;;;
+LEADS SEM ENDEREÇO OU VIABILIDADE CONFIRMADA;;Cliente teste 189;(20) 99000-4369;Cidade Alfa;Bairro Norte;;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 190;(20) 99000-2027;Cidade Gama;Centro;;Google LP;;Pre-contrato;600M
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 192;(20) 99000-2720;Cidade Alfa;Bairro Norte;;Google LP;;Pre-contrato;1G
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 195;(20) 99000-1971;Cidade Alfa;Bairro Norte;;Google LP;;Pre-contrato;1G
+LEADS SEM VIABILIDADE;;Cliente teste 196;(20) 99000-4119;Cidade Alfa;Centro;Sem viabilidade no local;Google LP;;;
+NEGOCIAÇÕES VENCEMOS;;Cliente teste 197;(20) 99000-0319;Cidade Alfa;Centro;;Google LP;;Ativo;1G
+NEGOCIAÇÕES VENCEMOS;;Cliente externo 0;(20) 981356-7487;Cidade Alfa;Centro;;Google LP;;Ativo;1G
+NEGOCIAÇÕES VENCEMOS;;Cliente externo 1;(20) 985169-1049;Cidade Alfa;Centro;;Google LP;;Ativo;1G
+NEGOCIAÇÕES VENCEMOS;;Cliente externo 2;(20) 984570-2196;Cidade Alfa;Centro;;Google LP;;Ativo;1G
+NEGOCIAÇÕES VENCEMOS;;Cliente externo 3;(20) 981742-7941;Cidade Alfa;Centro;;Google LP;;Ativo;1G
+NEGOCIAÇÕES VENCEMOS;;Cliente externo 4;(20) 986644-2044;Cidade Alfa;Centro;;Google LP;;Ativo;1G
+NEGOCIAÇÕES VENCEMOS;;Cliente externo 5;(20) 989866-1987;Cidade Alfa;Centro;;Google LP;;Ativo;1G

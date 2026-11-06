@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.DS_Store
+.env
+*.env
+.vercel/
+node_modules/
+# dados de cliente nunca entram neste repositório
+leads_normalizados.json
+otimizacao-campanhas-*.md
+clientes/
+rodadas/

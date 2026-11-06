@@ -1,0 +1,23 @@
+{
+  "titulo": "Cliente Demo",
+  "periodo_texto": "1 a 26 de setembro (84% do mês)",
+  "decisao_verba": "Tirar R$ 80 por dia do Interesse Amplo e passar para o Remarketing Quente.",
+  "dashboard_url": "https://exemplo.vercel.app",
+  "dashboard_descricao": "traz a árvore por campanha, público e anúncio, com filtro por motivo de perda.",
+  "metodo": "Método: leads do CRM cruzados com os exports de Meta e Google de 27/09 por UTM (campanha, conjunto e anúncio). MQL = MQL ou posterior no histórico. SQL = Reunião Agendada ou posterior. Venda = Venda ganha. Ficam de fora orgânicos e leads sem UTM.",
+  "semana_anterior": {"investimento": "R$ 10.000", "leads": "250", "mql": "90", "sql": "50", "venda": "18"},
+  "meta_mes": {"fracao_do_mes": 0.84, "leads": 400, "mql": 150, "sql": 80, "venda": 30},
+  "etapas_atuais": [["Em Atendimento", 60, 12], ["MQL", 40, 9], ["Reunião Agendada", 20, 4]],
+  "gargalos": ["Dezenas de MQL parados na etapa, com mediana de 9 dias: definir SLA com o comercial."],
+  "gasto_7_dias": {"Carrossel Depoimentos": "R$ 210"},
+  "decisoes": {
+    "Investir mais": [["Remarketing Quente", "Campanha", "R$ 64 por MQL, chega em SQL", "Subir verba em 20%"]],
+    "Manter sem escalar": [["Teste Replicado", "Campanha", "MQL barato, pouco SQL", "Reavaliar na próxima semana"]],
+    "Investir menos ou pausar": [["Interesse Amplo", "Campanha", "R$ 503 por MQL", "Reduzir à metade"]]
+  },
+  "desativar": [["Carrossel Produto", "Interesse Amplo", "R$ 180", "R$ 432 por MQL"]],
+  "para_onde_vai": "R$ 560 por semana saem do Interesse Amplo e vão para o Remarketing Quente.",
+  "utms_contas": ["Meta e Google ativos. 3 leads com macro não substituída: revisar o url_tags."],
+  "proximos_passos": [["Escalar o que chega em SQL", "subir a verba do Remarketing Quente."], ["Rastreio", "corrigir o url_tags dos anúncios com macro."]],
+  "planos": [["Corrigir url_tags", "3 leads sem origem", "Revisar parâmetros dos anúncios", "A definir", "Próxima semana", "Meta Ads: leads sem UTM = 0"]]
+}

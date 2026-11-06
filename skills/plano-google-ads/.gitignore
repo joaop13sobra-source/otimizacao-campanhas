@@ -1,0 +1,23 @@
+# nunca versionar dado de cliente real
+config.json
+config.*.json
+!assets/config.exemplo.json
+dados.json
+dados_*.json
+semrush.json
+volumes.json
+descoberta.json
+vendas.json
+plano.json
+!assets/plano.exemplo.json
+*.csv
+!assets/demo/dados/*.csv
+*.xlsx
+plano/
+saida/
+shot*.png
+# ambiente
+__pycache__/
+*.pyc
+.venv/
+.DS_Store

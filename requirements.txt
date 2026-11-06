@@ -1,0 +1,8 @@
+# otimizacao-campanhas: só precisa de openpyxl, e só para ler .xlsx
+openpyxl
+# plano-google-ads
+pandas
+numpy
+# Opcional: Doc de comitê (otimizacao-campanhas) e leitura direta de Google Sheets (plano-google-ads)
+google-auth
+google-api-python-client

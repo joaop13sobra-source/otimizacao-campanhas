@@ -1,0 +1,223 @@
+﻿DATA E HORÁRIO  DE ENTRADA,NOME,TELEFONE,STATUS,CIDADE,BAIRRO,UTM:CAMPANHA,UTM:PÚBLICO,UTM:CRIATIVO,UTM TERM
+2026-10-01 00:40:13,Lead de teste 001,20 99000-1569,valido,CIDADE BETA,Vila Nova,institucional,marca,ad02,netexemplo
+2026-10-01 00:54:40,Lead de teste 002,20 99000-4007,valido,CIDADE BETA,Vila Nova,core,provedor-internet,ad01,provedor de internet
+2026-10-01 01:29:39,Lead de teste 003,20 99000-1745,invalido,CIDADE ALFA,Bairro Sul,institucional,marca,ad01,netexemplo
+2026-10-01 03:33:24,Lead de teste 004,20 99000-3002,invalido,CIDADE ALFA,Bairro Sul,core,internet-fibra,ad01,internet residencial
+2026-10-01 04:28:40,Lead de teste 005,20 99000-3125,valido,CIDADE ALFA,Centro,core,internet-fibra,ad03,internet fibra regional
+2026-10-01 04:43:02,Lead de teste 006,20 99000-2175,invalido,CIDADE BETA,Centro,institucional,marca,ad03,net exemplo
+2026-10-01 08:14:31,Lead de teste 007,20 99000-1147,valido,CIDADE BETA,Centro,institucional,marca,ad01,netexemplo
+2026-10-01 09:11:35,Lead de teste 008,20 99000-2631,invalido,CIDADE ALFA,Bairro Sul,core,internet-fibra,ad01,internet residencial
+2026-10-01 09:34:27,Lead de teste 009,20 99000-3979,valido,CIDADE BETA,Centro,core,provedor-internet,ad02,provedor de internet
+2026-10-01 10:02:41,Lead de teste 010,20 99000-1023,valido,CIDADE ALFA,Bairro Sul,institucional,marca,ad01,netexemplo
+2026-10-01 11:52:19,Lead de teste 011,20 99000-0704,valido,CIDADE BETA,Vila Nova,institucional,marca,ad01,netexemplo
+2026-10-01 16:25:13,Lead de teste 012,20 99000-3854,valido,CIDADE ALFA,Bairro Sul,core,provedor-internet,ad01,provedor de internet
+2026-10-01 16:51:59,Lead de teste 013,20 99000-2979,valido,CIDADE ALFA,Bairro Norte,core,internet-fibra,ad03,internet residencial
+2026-10-01 19:00:50,Lead de teste 014,20 99000-1338,invalido,CIDADE ALFA,Bairro Sul,institucional,marca,ad03,netexemplo
+2026-10-01 21:19:59,Lead de teste 015,20 99000-4187,valido,CIDADE GAMA,Jardim,core,provedor-internet,ad01,provedor de internet
+2026-10-01 21:32:40,Lead de teste 016,20 99000-4149,valido,CIDADE ALFA,Centro,core,provedor-internet,ad01,provedor de internet
+2026-10-02 00:40:25,Lead de teste 017,20 99000-4329,valido,CIDADE BETA,Vila Nova,core,provedor-internet,ad03,provedor de internet
+2026-10-02 01:21:38,Lead de teste 018,20 99000-4044,valido,CIDADE BETA,Vila Nova,core,provedor-internet,ad03,provedor de internet
+2026-10-02 05:17:34,Lead de teste 019,20 99000-0658,valido,CIDADE ALFA,Bairro Norte,institucional,marca,ad01,netexemplo
+2026-10-02 15:21:22,Lead de teste 020,20 99000-4067,valido,CIDADE ALFA,Bairro Sul,core,provedor-internet,ad03,provedor de internet
+2026-10-02 16:45:45,Lead de teste 021,20 99000-0087,valido,CIDADE DELTA,Distrito 2,institucional,marca,ad03,netexemplo
+2026-10-02 17:35:57,Lead de teste 022,20 99000-1366,invalido,CIDADE ALFA,Bairro Sul,institucional,marca,ad03,netexemplo
+2026-10-02 19:09:21,Lead de teste 023,20 99000-1220,valido,CIDADE BETA,Centro,institucional,marca,ad03,netexemplo
+2026-10-02 19:35:26,Lead de teste 024,20 99000-1900,invalido,CIDADE ALFA,Bairro Norte,institucional,marca,ad03,netexemplo
+2026-10-02 19:42:52,Lead de teste 025,20 99000-4333,valido,CIDADE BETA,Centro,core,provedor-internet,ad02,provedor de internet
+2026-10-02 20:16:16,Lead de teste 026,20 99000-0764,valido,CIDADE BETA,Centro,institucional,marca,ad03,netexemplo
+2026-10-03 03:20:21,Lead de teste 027,20 99000-3195,invalido,CIDADE ALFA,Bairro Norte,core,internet-fibra,ad01,internet fibra regional
+2026-10-03 10:33:38,Lead de teste 028,20 99000-1127,valido,CIDADE GAMA,Jardim,institucional,marca,ad01,netexemplo
+2026-10-03 15:02:30,Lead de teste 029,20 99000-2924,valido,CIDADE ALFA,Centro,core,internet-fibra,ad02,internet residencial
+2026-10-03 18:12:19,Lead de teste 030,20 99000-2665,invalido,CIDADE BETA,Vila Nova,core,internet-fibra,ad02,internet residencial
+2026-10-03 19:05:28,Lead de teste 031,20 99000-2318,invalido,CIDADE ALFA,Centro,core,internet-fibra,ad01,internet residencial
+2026-10-03 20:25:44,Lead de teste 032,20 99000-1668,invalido,CIDADE BETA,Vila Nova,institucional,marca,ad01,netexemplo
+2026-10-03 22:17:13,Lead de teste 033,20 99000-1094,valido,CIDADE BETA,Centro,institucional,marca,ad01,netexemplo
+2026-10-03 22:44:08,Lead de teste 034,20 99000-1618,valido,CIDADE ALFA,Centro,institucional,marca,ad02,netexemplo
+2026-10-04 01:21:21,Lead de teste 035,20 99000-2576,invalido,CIDADE GAMA,Centro,core,internet-fibra,ad01,internet residencial
+2026-10-04 01:32:37,Lead de teste 036,20 99000-1883,invalido,CIDADE ALFA,Centro,institucional,marca,ad02,netexemplo
+2026-10-04 02:09:01,Lead de teste 037,20 99000-0143,valido,CIDADE ALFA,Bairro Norte,institucional,marca,ad02,netexemplo
+2026-10-04 03:07:11,Lead de teste 038,20 99000-3541,invalido,CIDADE BETA,Vila Nova,core,internet-fibra,ad03,serviço internet
+2026-10-04 04:46:51,Lead de teste 039,20 99000-2610,invalido,CIDADE ALFA,Centro,core,internet-fibra,ad03,internet residencial
+2026-10-04 05:40:32,Lead de teste 040,20 99000-0349,invalido,CIDADE GAMA,Jardim,institucional,marca,ad02,netexemplo
+2026-10-04 05:43:00,Lead de teste 041,20 99000-4089,valido,CIDADE ALFA,Bairro Sul,core,provedor-internet,ad02,provedor de internet
+2026-10-04 08:09:27,Lead de teste 042,20 99000-3864,valido,CIDADE ALFA,Bairro Norte,core,provedor-internet,ad03,provedor de internet
+2026-10-04 10:38:52,Lead de teste 043,20 99000-3007,invalido,CIDADE BETA,Centro,core,internet-fibra,ad03,internet fibra regional
+2026-10-04 12:15:36,Lead de teste 044,20 99000-1722,valido,CIDADE ALFA,Bairro Sul,institucional,marca,ad03,netexemplo
+2026-10-04 12:17:12,Lead de teste 045,20 99000-2608,valido,CIDADE DELTA,Distrito 1,core,internet-fibra,ad02,internet residencial
+2026-10-04 13:18:35,Lead de teste 046,20 99000-3276,valido,CIDADE ALFA,Centro,core,internet-fibra,ad01,internet fibra regional
+2026-10-04 14:33:47,Lead de teste 047,20 99000-1777,invalido,CIDADE ALFA,Bairro Norte,institucional,marca,ad02,netexemplo
+2026-10-04 15:06:05,Lead de teste 048,20 99000-3909,invalido,CIDADE ALFA,Bairro Sul,core,provedor-internet,ad03,provedor de internet
+2026-10-04 16:55:07,Lead de teste 049,20 99000-2856,valido,CIDADE BETA,Centro,core,internet-fibra,ad02,internet residencial
+2026-10-04 19:11:12,Lead de teste 050,20 99000-1319,invalido,CIDADE ALFA,Bairro Sul,institucional,marca,ad02,netexemplo
+2026-10-05 14:34:17,Lead de teste 051,20 99000-2546,valido,CIDADE DELTA,Distrito 2,core,internet-fibra,ad03,internet residencial
+2026-10-05 15:51:04,Lead de teste 052,20 99000-3631,valido,CIDADE ALFA,Centro,core,internet-fibra,ad01,serviço internet
+2026-10-05 16:57:25,Lead de teste 053,20 99000-3269,valido,CIDADE DELTA,Distrito 1,core,internet-fibra,ad02,internet fibra regional
+2026-10-05 20:58:17,Lead de teste 054,20 99000-2263,invalido,CIDADE ALFA,Bairro Norte,core,internet-fibra,ad02,internet residencial
+2026-10-05 22:34:52,Lead de teste 055,20 99000-1586,invalido,CIDADE ALFA,Bairro Norte,institucional,marca,ad01,netexemplo
+2026-10-06 06:58:24,Lead de teste 056,20 99000-0741,valido,CIDADE ALFA,Bairro Norte,institucional,marca,ad01,netexemplo
+2026-10-06 10:51:45,Lead de teste 057,20 99000-0262,valido,CIDADE GAMA,Centro,institucional,marca,ad01,netexemplo
+2026-10-06 11:44:49,Lead de teste 058,20 99000-2961,invalido,CIDADE GAMA,Centro,core,internet-fibra,ad03,internet residencial
+2026-10-06 14:43:10,Lead de teste 059,20 99000-0469,valido,CIDADE ALFA,Centro,institucional,marca,ad01,netexemplo
+2026-10-06 15:43:53,Lead de teste 060,20 99000-2590,valido,CIDADE ALFA,Bairro Sul,core,internet-fibra,ad01,internet residencial
+2026-10-06 19:19:32,Lead de teste 061,20 99000-3722,valido,CIDADE ALFA,Bairro Norte,core,internet-fibra,ad03,serviço internet
+2026-10-06 22:03:38,Lead de teste 062,20 99000-0938,valido,CIDADE GAMA,Jardim,institucional,marca,ad02,netexemplo
+07/10/202601:38:14,Lead de teste 063,20 99000-3780,invalido,CIDADE ALFA,Bairro Norte,core,provedor-internet,ad02,provedor de internet
+07/10/202603:04:45,Lead de teste 064,20 99000-1188,invalido,CIDADE DELTA,Distrito 1,institucional,marca,ad02,netexemplo
+07/10/202606:59:24,Lead de teste 065,20 99000-0411,invalido,CIDADE GAMA,Jardim,institucional,marca,ad03,netexemplo
+07/10/202610:10:03,Lead de teste 066,20 99000-1314,invalido,CIDADE BETA,Centro,institucional,marca,ad01,netexemplo
+07/10/202611:22:33,Lead de teste 067,20 99000-4268,invalido,CIDADE GAMA,Centro,core,provedor-internet,ad03,provedor de internet
+07/10/202614:17:07,Lead de teste 068,20 99000-0459,valido,CIDADE ALFA,Centro,institucional,marca,ad03,netexemplo
+07/10/202614:45:31,Lead de teste 069,20 99000-2296,valido,CIDADE GAMA,Jardim,core,internet-fibra,ad01,internet residencial
+07/10/202614:54:44,Lead de teste 070,20 99000-3798,valido,CIDADE ALFA,Bairro Norte,core,provedor-internet,ad02,provedor de internet
+07/10/202614:59:46,Lead de teste 071,20 99000-0598,invalido,CIDADE ALFA,Bairro Norte,institucional,marca,ad01,netexemplo
+07/10/202615:09:36,Lead de teste 072,20 99000-4209,invalido,CIDADE ALFA,Bairro Norte,core,provedor-internet,ad02,provedor de internet
+07/10/202616:00:32,Lead de teste 073,20 99000-3329,valido,CIDADE BETA,Centro,core,internet-fibra,ad02,internet fibra regional
+07/10/202616:55:32,Lead de teste 074,20 99000-1727,invalido,CIDADE GAMA,Jardim,institucional,marca,ad03,netexemplo
+07/10/202622:43:12,Lead de teste 075,20 99000-2207,valido,CIDADE GAMA,Jardim,institucional,marca,ad01,net exemplo
+08/10/202602:10:54,Lead de teste 076,20 99000-1183,valido,CIDADE BETA,Vila Nova,institucional,marca,ad01,netexemplo
+08/10/202607:18:57,Lead de teste 077,20 99000-0180,valido,CIDADE ALFA,Bairro Norte,institucional,marca,ad03,netexemplo
+08/10/202608:59:49,Lead de teste 078,20 99000-1257,invalido,CIDADE ALFA,Bairro Sul,institucional,marca,ad01,netexemplo
+08/10/202609:18:18,Lead de teste 079,20 99000-2422,invalido,CIDADE DELTA,Distrito 1,core,internet-fibra,ad01,internet residencial
+08/10/202609:53:48,Lead de teste 080,20 99000-1300,valido,CIDADE BETA,Centro,institucional,marca,ad01,netexemplo
+08/10/202612:37:56,Lead de teste 081,20 99000-4170,invalido,CIDADE ALFA,Bairro Sul,core,provedor-internet,ad03,provedor de internet
+08/10/202613:43:41,Lead de teste 082,20 99000-0751,invalido,CIDADE BETA,Vila Nova,institucional,marca,ad03,netexemplo
+08/10/202614:22:15,Lead de teste 083,20 99000-3163,valido,CIDADE BETA,Vila Nova,core,internet-fibra,ad02,internet fibra regional
+08/10/202616:28:06,Lead de teste 084,20 99000-1951,invalido,CIDADE BETA,Vila Nova,institucional,marca,ad03,netexemplo
+08/10/202619:38:37,Lead de teste 085,20 99000-2726,invalido,CIDADE BETA,Vila Nova,core,internet-fibra,ad01,internet residencial
+08/10/202619:45:21,Lead de teste 086,20 99000-0909,valido,CIDADE GAMA,Centro,institucional,marca,ad03,netexemplo
+08/10/202623:08:42,Lead de teste 087,20 99000-3144,valido,CIDADE ALFA,Bairro Norte,core,internet-fibra,ad02,internet fibra regional
+09/10/202600:03:31,Lead de teste 088,20 99000-3505,valido,CIDADE ALFA,Bairro Norte,core,internet-fibra,ad02,serviço internet
+09/10/202600:41:59,Lead de teste 089,20 99000-1079,valido,CIDADE ALFA,Bairro Norte,institucional,marca,ad02,netexemplo
+09/10/202602:01:35,Lead de teste 090,20 99000-3236,invalido,CIDADE GAMA,Centro,core,internet-fibra,ad01,internet fibra regional
+09/10/202602:11:50,Lead de teste 091,20 99000-3515,valido,CIDADE ALFA,Bairro Norte,core,internet-fibra,ad02,serviço internet
+09/10/202605:30:11,Lead de teste 092,20 99000-4234,invalido,CIDADE DELTA,Distrito 2,core,provedor-internet,ad02,provedor de internet
+09/10/202606:15:42,Lead de teste 093,20 99000-0957,invalido,CIDADE ALFA,Bairro Norte,institucional,marca,ad02,netexemplo
+09/10/202609:04:39,Lead de teste 094,20 99000-3089,invalido,CIDADE ALFA,Bairro Sul,core,internet-fibra,ad01,internet fibra regional
+09/10/202612:50:55,Lead de teste 095,20 99000-2909,invalido,CIDADE ALFA,Centro,core,internet-fibra,ad02,internet residencial
+09/10/202616:49:12,Lead de teste 096,20 99000-1990,invalido,CIDADE ALFA,Bairro Sul,institucional,marca,ad01,netexemplo
+09/10/202618:46:48,Lead de teste 097,20 99000-3599,valido,CIDADE ALFA,Centro,core,internet-fibra,ad02,serviço internet
+09/10/202621:04:45,Lead de teste 098,20 99000-2354,invalido,CIDADE ALFA,Bairro Norte,core,internet-fibra,ad02,internet residencial
+10/10/202603:08:56,Lead de teste 099,20 99000-3021,valido,CIDADE ALFA,Bairro Norte,core,internet-fibra,ad02,internet fibra regional
+10/10/202603:44:26,Lead de teste 100,20 99000-1812,valido,CIDADE ALFA,Centro,institucional,marca,ad01,netexemplo
+10/10/202605:29:12,Lead de teste 101,20 99000-3153,invalido,CIDADE ALFA,Bairro Sul,core,internet-fibra,ad01,internet fibra regional
+10/10/202607:05:48,Lead de teste 102,20 99000-1849,valido,CIDADE ALFA,Centro,institucional,marca,ad03,netexemplo
+10/10/202608:06:00,Lead de teste 103,20 99000-2134,invalido,CIDADE GAMA,Jardim,institucional,marca,ad01,netexemplo
+10/10/202610:24:09,Lead de teste 104,20 99000-2431,invalido,CIDADE ALFA,Bairro Sul,core,internet-fibra,ad02,internet residencial
+10/10/202610:53:12,Lead de teste 105,20 99000-0523,invalido,CIDADE DELTA,Distrito 1,institucional,marca,ad02,netexemplo
+10/10/202615:18:38,Lead de teste 106,20 99000-3158,invalido,CIDADE GAMA,Centro,core,internet-fibra,ad01,internet fibra regional
+10/10/202619:56:54,Lead de teste 107,20 99000-3171,invalido,CIDADE ALFA,Bairro Sul,core,internet-fibra,ad02,internet fibra regional
+10/10/202621:26:37,Lead de teste 108,20 99000-0496,valido,CIDADE ALFA,Centro,institucional,marca,ad02,netexemplo
+10/10/202621:52:48,Lead de teste 109,20 99000-1506,valido,CIDADE ALFA,Centro,institucional,marca,ad03,netexemplo
+11/10/202602:02:26,Lead de teste 110,20 99000-1686,invalido,CIDADE GAMA,Centro,institucional,marca,ad03,netexemplo
+11/10/202602:19:53,Lead de teste 111,20 99000-2832,valido,CIDADE BETA,Vila Nova,core,internet-fibra,ad02,internet residencial
+11/10/202607:39:41,Lead de teste 112,20 99000-1356,valido,CIDADE ALFA,Centro,institucional,marca,ad01,netexemplo
+11/10/202608:35:40,Lead de teste 113,20 99000-0382,invalido,CIDADE GAMA,Centro,institucional,marca,ad02,netexemplo
+11/10/202609:32:53,Lead de teste 114,20 99000-0819,valido,CIDADE BETA,Vila Nova,institucional,marca,ad01,netexemplo
+11/10/202610:25:40,Lead de teste 115,20 99000-0194,invalido,CIDADE GAMA,Jardim,institucional,marca,ad02,netexemplo
+11/10/202610:32:02,Lead de teste 116,20 99000-2806,invalido,CIDADE ALFA,Bairro Norte,core,internet-fibra,ad01,internet residencial
+11/10/202611:35:10,Lead de teste 117,20 99000-2862,invalido,CIDADE ALFA,Centro,core,internet-fibra,ad03,internet residencial
+11/10/202612:48:24,Lead de teste 118,20 99000-1960,invalido,CIDADE DELTA,Distrito 1,institucional,marca,ad03,netexemplo
+11/10/202613:41:22,Lead de teste 119,20 99000-0856,valido,CIDADE ALFA,Bairro Sul,institucional,marca,ad02,netexemplo
+11/10/202615:49:31,Lead de teste 120,20 99000-1385,invalido,CIDADE ALFA,Bairro Sul,institucional,marca,ad03,netexemplo
+11/10/202617:34:36,Lead de teste 121,20 99000-0223,valido,CIDADE BETA,Centro,institucional,marca,ad02,netexemplo
+11/10/202618:17:21,Lead de teste 122,20 99000-2504,valido,CIDADE ALFA,Bairro Norte,core,internet-fibra,ad01,internet residencial
+11/10/202619:45:53,Lead de teste 123,20 99000-4300,invalido,CIDADE BETA,Vila Nova,core,provedor-internet,ad02,provedor de internet
+11/10/202621:19:45,Lead de teste 124,20 99000-3895,valido,CIDADE BETA,Centro,core,provedor-internet,ad03,provedor de internet
+11/10/202622:26:55,Lead de teste 125,20 99000-3406,valido,CIDADE ALFA,Bairro Norte,core,internet-fibra,ad03,serviço internet
+11/10/202622:48:03,Lead de teste 126,20 99000-3813,valido,CIDADE GAMA,Jardim,core,provedor-internet,ad03,provedor de internet
+11/10/202623:15:32,Lead de teste 127,20 99000-3359,valido,CIDADE ALFA,Bairro Norte,core,internet-fibra,ad02,serviço internet
+11/10/202623:18:44,Lead de teste 128,20 99000-2672,invalido,CIDADE ALFA,Centro,core,internet-fibra,ad03,internet residencial
+12/10/202600:55:55,Lead de teste 129,20 99000-2362,invalido,CIDADE ALFA,Bairro Norte,core,internet-fibra,ad03,internet residencial
+12/10/202600:57:19,Lead de teste 130,20 99000-1536,invalido,CIDADE ALFA,Centro,institucional,marca,ad01,netexemplo
+12/10/202602:49:44,Lead de teste 131,20 99000-2692,invalido,CIDADE BETA,Vila Nova,core,internet-fibra,ad01,internet residencial
+12/10/202608:16:28,Lead de teste 132,20 99000-0609,invalido,CIDADE DELTA,Distrito 1,institucional,marca,ad03,netexemplo
+12/10/202609:58:24,Lead de teste 133,20 99000-0686,valido,CIDADE ALFA,Bairro Norte,institucional,marca,ad02,netexemplo
+12/10/202613:51:39,Lead de teste 134,20 99000-0548,invalido,CIDADE ALFA,Bairro Norte,institucional,marca,ad02,netexemplo
+12/10/202618:55:06,Lead de teste 135,20 99000-3081,invalido,CIDADE BETA,Centro,core,internet-fibra,ad02,internet fibra regional
+12/10/202621:33:47,Lead de teste 136,20 99000-0846,invalido,CIDADE ALFA,Bairro Sul,institucional,marca,ad03,netexemplo
+12/10/202623:57:15,Lead de teste 137,20 99000-0940,invalido,CIDADE GAMA,Centro,institucional,marca,ad01,netexemplo
+13/10/202603:32:46,Lead de teste 138,20 99000-1403,valido,CIDADE ALFA,Bairro Sul,institucional,marca,ad02,netexemplo
+13/10/202604:26:25,Lead de teste 139,20 99000-3839,invalido,CIDADE ALFA,Centro,core,provedor-internet,ad02,provedor de internet
+13/10/202604:57:51,Lead de teste 140,20 99000-3771,invalido,CIDADE ALFA,Centro,core,provedor-internet,ad03,provedor de internet
+13/10/202606:30:17,Lead de teste 141,20 99000-2792,invalido,CIDADE BETA,Centro,core,internet-fibra,ad01,internet residencial
+13/10/202607:25:12,Lead de teste 142,20 99000-0107,valido,CIDADE ALFA,Bairro Norte,institucional,marca,ad02,netexemplo
+13/10/202607:45:02,Lead de teste 143,20 99000-3638,valido,CIDADE GAMA,Centro,core,internet-fibra,ad03,serviço internet
+13/10/202612:16:21,Lead de teste 144,20 99000-0242,valido,CIDADE BETA,Centro,institucional,marca,ad02,netexemplo
+13/10/202612:57:25,Lead de teste 145,20 99000-0958,invalido,CIDADE DELTA,Distrito 2,institucional,marca,ad01,netexemplo
+13/10/202614:00:46,Lead de teste 146,20 99000-1582,invalido,CIDADE ALFA,Bairro Sul,institucional,marca,ad03,netexemplo
+13/10/202616:31:22,Lead de teste 147,20 99000-3473,invalido,CIDADE BETA,Vila Nova,core,internet-fibra,ad02,serviço internet
+13/10/202616:57:06,Lead de teste 148,20 99000-4013,invalido,CIDADE DELTA,Distrito 1,core,provedor-internet,ad01,provedor de internet
+13/10/202617:13:49,Lead de teste 149,20 99000-3221,valido,CIDADE ALFA,Bairro Sul,core,internet-fibra,ad03,internet fibra regional
+13/10/202618:23:19,Lead de teste 150,20 99000-1890,invalido,CIDADE DELTA,Distrito 1,institucional,marca,ad01,netexemplo
+13/10/202618:57:40,Lead de teste 151,20 99000-3121,invalido,CIDADE BETA,Vila Nova,core,internet-fibra,ad01,internet fibra regional
+14/10/202601:40:15,Lead de teste 152,20 99000-0059,invalido,CIDADE BETA,Centro,institucional,marca,ad03,netexemplo
+14/10/202605:10:27,Lead de teste 153,20 99000-2528,invalido,CIDADE DELTA,Distrito 1,core,internet-fibra,ad02,internet residencial
+14/10/202605:45:42,Lead de teste 154,20 99000-4280,valido,CIDADE ALFA,Bairro Norte,core,provedor-internet,ad01,provedor de internet
+14/10/202608:53:13,Lead de teste 155,20 99000-1638,valido,CIDADE ALFA,Centro,institucional,marca,ad02,netexemplo
+14/10/202622:24:59,Lead de teste 156,20 99000-1184,valido,CIDADE ALFA,Bairro Norte,institucional,marca,ad02,netexemplo
+14/10/202622:51:07,Lead de teste 157,20 99000-2157,invalido,CIDADE ALFA,Centro,institucional,marca,ad03,net exemplo
+14/10/202623:53:12,Lead de teste 158,20 99000-0025,valido,CIDADE ALFA,Bairro Norte,institucional,marca,ad01,netexemplo
+15/10/202604:58:45,Lead de teste 159,20 99000-1483,invalido,CIDADE ALFA,Centro,institucional,marca,ad03,netexemplo
+15/10/202605:38:26,Lead de teste 160,20 99000-2866,invalido,CIDADE DELTA,Distrito 1,core,internet-fibra,ad02,internet residencial
+15/10/202606:01:26,Lead de teste 161,20 99000-1468,invalido,CIDADE DELTA,Distrito 2,institucional,marca,ad03,netexemplo
+15/10/202606:09:01,Lead de teste 162,20 99000-2458,valido,CIDADE BETA,Vila Nova,core,internet-fibra,ad01,internet residencial
+15/10/202611:55:16,Lead de teste 163,20 99000-3647,invalido,CIDADE ALFA,Bairro Sul,core,internet-fibra,ad01,serviço internet
+15/10/202617:56:12,Lead de teste 164,20 99000-4343,valido,CIDADE BETA,Centro,core,provedor-internet,ad02,internet cidade alfa
+15/10/202619:41:51,Lead de teste 165,20 99000-3687,valido,CIDADE ALFA,Bairro Norte,core,internet-fibra,ad03,serviço internet
+15/10/202620:05:34,Lead de teste 166,20 99000-0293,invalido,CIDADE GAMA,Jardim,institucional,marca,ad01,netexemplo
+15/10/202622:16:06,Lead de teste 167,20 99000-3365,invalido,CIDADE BETA,Centro,core,internet-fibra,ad02,serviço internet
+15/10/202622:38:36,Lead de teste 168,20 99000-2490,invalido,CIDADE ALFA,Centro,core,internet-fibra,ad03,internet residencial
+15/10/202623:41:46,Lead de teste 169,20 99000-1954,valido,CIDADE ALFA,Bairro Norte,institucional,marca,ad02,netexemplo
+16/10/202600:54:43,Lead de teste 170,20 99000-2389,valido,CIDADE GAMA,Centro,core,internet-fibra,ad02,internet residencial
+16/10/202601:00:26,Lead de teste 171,20 99000-2052,valido,CIDADE BETA,Centro,institucional,marca,ad02,netexemplo
+16/10/202601:41:43,Lead de teste 172,20 99000-2220,valido,CIDADE ALFA,Bairro Sul,institucional,marca,ad03,net exemplo
+16/10/202605:06:26,Lead de teste 173,20 99000-0443,valido,CIDADE ALFA,Bairro Sul,institucional,marca,ad02,netexemplo
+16/10/202605:22:50,Lead de teste 174,20 99000-3309,invalido,CIDADE ALFA,Bairro Norte,core,internet-fibra,ad02,internet fibra regional
+16/10/202605:31:15,Lead de teste 175,20 99000-2227,valido,CIDADE BETA,Vila Nova,institucional,marca,ad01,net exemplo
+16/10/202611:36:22,Lead de teste 176,20 99000-2082,invalido,CIDADE ALFA,Centro,institucional,marca,ad01,netexemplo
+16/10/202611:58:54,Lead de teste 177,20 99000-2387,invalido,CIDADE DELTA,Distrito 1,core,internet-fibra,ad01,internet residencial
+16/10/202612:12:31,Lead de teste 178,20 99000-2121,valido,CIDADE DELTA,Distrito 2,institucional,marca,ad03,netexemplo
+16/10/202612:12:58,Lead de teste 179,20 99000-3944,invalido,CIDADE GAMA,Centro,core,provedor-internet,ad02,provedor de internet
+16/10/202613:49:11,Lead de teste 180,20 99000-2560,valido,CIDADE BETA,Centro,core,internet-fibra,ad03,internet residencial
+16/10/202614:51:43,Lead de teste 181,20 99000-3566,invalido,CIDADE GAMA,Centro,core,internet-fibra,ad03,serviço internet
+16/10/202616:23:46,Lead de teste 182,20 99000-3439,invalido,CIDADE ALFA,Bairro Norte,core,internet-fibra,ad01,serviço internet
+16/10/202618:33:26,Lead de teste 183,20 99000-1926,invalido,CIDADE ALFA,Bairro Sul,institucional,marca,ad01,netexemplo
+16/10/202619:43:22,Lead de teste 184,20 99000-3402,valido,CIDADE ALFA,Bairro Sul,core,internet-fibra,ad02,serviço internet
+17/10/202602:13:31,Lead de teste 185,20 99000-0646,invalido,CIDADE ALFA,Centro,institucional,marca,ad02,netexemplo
+17/10/202602:47:05,Lead de teste 186,20 99000-1043,invalido,CIDADE BETA,Vila Nova,institucional,marca,ad02,netexemplo
+17/10/202603:35:20,Lead de teste 187,20 99000-2889,valido,CIDADE DELTA,Distrito 1,core,internet-fibra,ad02,internet residencial
+17/10/202610:44:13,Lead de teste 188,20 99000-2101,invalido,CIDADE ALFA,Bairro Norte,institucional,marca,ad01,netexemplo
+17/10/202611:08:32,Lead de teste 189,20 99000-3746,valido,CIDADE DELTA,Distrito 2,core,provedor-internet,ad03,provedor de internet
+17/10/202611:34:56,Lead de teste 190,20 99000-4369,valido,CIDADE ALFA,Bairro Norte,core,provedor-internet,ad02,fibra óptica
+17/10/202613:10:39,Lead de teste 191,20 99000-2027,invalido,CIDADE GAMA,Centro,institucional,marca,ad01,netexemplo
+17/10/202614:36:35,Lead de teste 192,20 99000-0784,invalido,CIDADE BETA,Centro,institucional,marca,ad01,netexemplo
+17/10/202615:40:50,Lead de teste 193,20 99000-2720,valido,CIDADE ALFA,Bairro Norte,core,internet-fibra,ad03,internet residencial
+17/10/202616:25:50,Lead de teste 194,20 99000-1343,invalido,CIDADE ALFA,Bairro Sul,institucional,marca,ad01,netexemplo
+17/10/202620:05:39,Lead de teste 195,20 99000-1533,invalido,CIDADE ALFA,Bairro Norte,institucional,marca,ad02,netexemplo
+17/10/202620:17:05,Lead de teste 196,20 99000-1971,valido,CIDADE ALFA,Bairro Norte,institucional,marca,ad01,netexemplo
+17/10/202621:05:36,Lead de teste 197,20 99000-4119,valido,CIDADE ALFA,Centro,core,provedor-internet,ad01,provedor de internet
+17/10/202621:23:52,Lead de teste 198,20 99000-0319,valido,CIDADE ALFA,Centro,institucional,marca,ad01,netexemplo
+18/10/202600:24:25,Lead de teste 199,20 99000-2419,valido,CIDADE ALFA,Centro,core,internet-fibra,ad02,internet residencial
+18/10/202602:49:30,Lead de teste 200,20 99000-1880,invalido,CIDADE DELTA,Distrito 1,institucional,marca,ad02,netexemplo
+18/10/202606:25:15,Lead de teste 201,20 99000-3787,valido,CIDADE GAMA,Jardim,core,provedor-internet,ad03,provedor de internet
+18/10/202606:51:32,Lead de teste 202,20 99000-2762,valido,CIDADE ALFA,Bairro Sul,core,internet-fibra,ad03,internet residencial
+18/10/202610:28:00,Lead de teste 203,20 99000-0306,valido,CIDADE BETA,Centro,institucional,marca,ad02,netexemplo
+18/10/202612:07:10,Lead de teste 204,20 99000-3658,valido,CIDADE ALFA,Bairro Sul,core,internet-fibra,ad02,serviço internet
+18/10/202618:37:49,Lead de teste 205,20 99000-2251,invalido,CIDADE ALFA,Bairro Norte,institucional,marca,ad03,net exemplo
+18/10/202619:53:49,Lead de teste 206,20 99000-1431,valido,CIDADE ALFA,Centro,institucional,marca,ad01,netexemplo
+18/10/202622:16:06,Lead de teste 207,20 99000-1108,invalido,CIDADE ALFA,Bairro Sul,institucional,marca,ad03,netexemplo
+19/10/202603:27:33,Lead de teste 208,20 99000-0583,invalido,CIDADE BETA,Centro,institucional,marca,ad03,netexemplo
+19/10/202605:28:06,Lead de teste 209,20 99000-0307,valido,CIDADE GAMA,Jardim,institucional,marca,ad03,netexemplo
+19/10/202607:29:26,Lead de teste 210,20 99000-3053,invalido,CIDADE BETA,Vila Nova,core,internet-fibra,ad02,internet fibra regional
+19/10/202609:39:46,Lead de teste 211,20 99000-0994,invalido,CIDADE ALFA,Bairro Sul,institucional,marca,ad02,netexemplo
+19/10/202611:26:54,Lead de teste 212,20 99000-0680,valido,CIDADE GAMA,Jardim,institucional,marca,ad01,netexemplo
+19/10/202612:32:35,Lead de teste 213,20 99000-1471,valido,CIDADE GAMA,Jardim,institucional,marca,ad02,netexemplo
+19/10/202618:12:59,Lead de teste 214,20 99000-3288,invalido,CIDADE BETA,Vila Nova,core,internet-fibra,ad02,internet fibra regional
+19/10/202619:09:30,Lead de teste 215,20 99000-3500,valido,CIDADE ALFA,Bairro Sul,core,internet-fibra,ad02,serviço internet
+19/10/202619:15:40,Lead de teste 216,20 99000-0891,invalido,CIDADE ALFA,Bairro Sul,institucional,marca,ad02,netexemplo
+19/10/202619:52:27,Lead de teste 217,20 99000-1272,valido,CIDADE ALFA,Bairro Norte,institucional,marca,ad02,netexemplo
+19/10/202620:09:11,Lead de teste 218,20 99000-3917,valido,CIDADE ALFA,Centro,core,provedor-internet,ad02,provedor de internet
+19/10/202620:32:22,Lead de teste 219,20 99000-3042,valido,CIDADE DELTA,Distrito 1,core,internet-fibra,ad02,internet fibra regional
+19/10/202621:05:47,Lead de teste 220,20 99000-0749,invalido,CIDADE GAMA,Centro,institucional,marca,ad03,netexemplo
+19/10/202621:31:05,Lead de teste 221,20 99000-4359,invalido,CIDADE BETA,Centro,core,provedor-internet,ad02,internet em cidade alfa
+19/10/202623:06:04,Lead de teste 222,20 99000-0691,valido,CIDADE DELTA,Distrito 1,institucional,marca,ad01,netexemplo

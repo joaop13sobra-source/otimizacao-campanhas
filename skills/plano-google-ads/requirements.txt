@@ -1,0 +1,5 @@
+pandas>=1.5
+numpy>=1.23
+# opcional: ler a planilha de leads direto do Google Sheets
+google-auth>=2.0
+google-api-python-client>=2.0

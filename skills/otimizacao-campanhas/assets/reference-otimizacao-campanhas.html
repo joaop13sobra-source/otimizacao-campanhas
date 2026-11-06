@@ -1,0 +1,863 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<title>Otimização de Campanhas — {{CLIENTE}} — {{PERIODO}}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#ffffff; --surface:#ffffff; --surface-soft:#f5f5f5; --surface-raised:#fafafa;
+    --ink:#1c1a18; --ink-soft:#55504a; --ink-muted:#8f887f;
+    --line:#e2e2e2; --line-soft:#ececec;
+    --accent:#d11a0e; --accent-dark:#a8120a; --accent-soft:#fbe7e3; --accent-ink:#7e0b05;
+    --good:#0ca30c; --good-bg:#e6f6e6;
+    --warning:#b7791f; --warning-bg:#fdf1dc;
+    --critical:#d03b3b; --critical-bg:#fbe9e7;
+    --neutral-bg:#f0eee9;
+    --bar:#2a78d6; --bar-track:#dbe8f8;
+    --bar2:#8a4fd1; --bar2-track:#e9ddf7;
+    --sans:'IBM Plex Sans', system-ui, sans-serif;
+    --mono:'JetBrains Mono', ui-monospace, monospace;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; font-family:var(--sans); background:var(--bg); color:var(--ink); padding:32px 24px 64px; line-height:1.45;}
+  .wrap{max-width:1360px; margin:0 auto; display:flex; flex-direction:column; gap:22px;}
+  header{display:flex; justify-content:space-between; align-items:flex-end; gap:16px; border-bottom:3px solid var(--accent); padding-bottom:16px;}
+  header h1{font-size:1.55rem; font-weight:700; letter-spacing:-.01em;}
+  header .sub{color:var(--ink-soft); font-size:.86rem; margin-top:6px; line-height:1.6;}
+  header .sub b{color:var(--ink); font-weight:600;}
+  .tag{font-family:var(--mono); font-size:.68rem; text-transform:uppercase; letter-spacing:.06em; background:var(--accent); color:#fff; padding:5px 10px; border-radius:5px; white-space:nowrap;}
+  .tabs{display:flex; gap:22px; border-bottom:1px solid var(--line);}
+  .tab-btn{font-family:var(--sans); font-size:.9rem; font-weight:600; color:var(--ink-muted); background:none; border:none; padding:10px 2px 12px; cursor:pointer; border-bottom:3px solid transparent; margin-bottom:-1px;}
+  .tab-btn.active{color:var(--accent); border-bottom-color:var(--accent);}
+  .tab-btn:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+  .tab-panel{display:none; flex-direction:column; gap:22px;}
+  .tab-panel.active{display:flex;}
+  .kpi-row{display:grid; grid-template-columns:repeat(auto-fit, minmax(135px,1fr)); gap:12px;}
+  .kpi{background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:14px 16px;}
+  .kpi .label{font-size:.68rem; text-transform:uppercase; letter-spacing:.04em; color:var(--ink-muted);}
+  .kpi .value{font-family:var(--mono); font-size:1.3rem; font-weight:700; margin-top:5px; font-variant-numeric:tabular-nums;}
+  .kpi .value.small{font-size:1rem; font-family:var(--sans);}
+  .kpi .subvalue{font-family:var(--mono); font-size:.68rem; color:var(--ink-muted); margin-top:3px; font-variant-numeric:tabular-nums;}
+  .kpi.stage-mql{border-top:3px solid var(--bar);}
+  .kpi.stage-sql{border-top:3px solid var(--bar2);}
+  .kpi.stage-venda{border-top:3px solid var(--good);}
+  .decision{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .decision.single{grid-template-columns:1fr;}
+  .decision .card{border-radius:12px; padding:18px 20px; border:1px solid;}
+  .decision .invest{background:var(--good-bg); border-color:var(--good);}
+  .decision .cut{background:var(--critical-bg); border-color:var(--critical);}
+  .decision .attn{background:var(--warning-bg); border-color:var(--warning);}
+  .decision h3{font-size:.82rem; text-transform:uppercase; letter-spacing:.04em; margin-bottom:2px; display:flex; align-items:center; gap:6px;}
+  .decision .invest h3{color:var(--good);}
+  .decision .cut h3{color:var(--critical);}
+  .decision .attn h3{color:var(--warning);}
+  .decision .hint{font-size:.74rem; color:var(--ink-muted); margin-bottom:10px;}
+  .decision ul{list-style:none; margin:0; padding:0;}
+  .decision li{display:flex; justify-content:space-between; align-items:baseline; gap:10px; padding:8px 0; border-bottom:1px dashed var(--line);}
+  .decision li:last-child{border-bottom:none;}
+  .decision li .name{font-weight:600; font-size:.88rem;}
+  .decision li .where{display:block; font-size:.72rem; color:var(--ink-muted); font-weight:400; margin-top:1px;}
+  .decision li .metric{font-family:var(--mono); font-size:.85rem; white-space:nowrap; font-variant-numeric:tabular-nums;}
+  section{display:flex; flex-direction:column; gap:10px;}
+  .section-head{display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;}
+  .section-head h2{font-size:1.05rem; font-weight:700; display:flex; align-items:center; gap:8px;}
+  .section-head .platform-badge{font-family:var(--mono); font-size:.66rem; text-transform:uppercase; letter-spacing:.05em; background:var(--surface-soft); border:1px solid var(--line); border-radius:4px; padding:2px 7px; color:var(--ink-soft);}
+  .legend{display:flex; gap:14px; flex-wrap:wrap; font-size:.72rem; color:var(--ink-muted);}
+  .legend span{display:inline-flex; align-items:center; gap:5px;}
+  .dot{width:8px; height:8px; border-radius:50%; display:inline-block;}
+  .dot.investir{background:var(--good);}
+  .dot.observar{background:var(--warning);}
+  .dot.cortar{background:var(--critical);}
+  .sort-bar{display:flex; align-items:center; gap:8px; font-size:.76rem; color:var(--ink-muted);}
+  .sort-bar select, .sort-bar button{font-family:var(--sans); font-size:.76rem; padding:4px 9px; border-radius:6px; border:1px solid var(--line); background:var(--surface); color:var(--ink); cursor:pointer;}
+  .sort-bar button:hover, .sort-bar select:hover{background:var(--surface-soft);}
+  .sort-bar button:focus-visible, .sort-bar select:focus-visible{outline:2px solid var(--accent); outline-offset:1px;}
+  .filter-chip{display:inline-flex; align-items:center; gap:6px; font-size:.76rem; font-weight:600; background:var(--accent-soft); color:var(--accent-ink); border:1px solid var(--accent); border-radius:20px; padding:4px 6px 4px 12px;}
+  .filter-chip button{all:unset; cursor:pointer; width:16px; height:16px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:var(--accent); color:#fff; font-size:.7rem;}
+  tr.reason-row{cursor:pointer;}
+  tr.reason-row:hover td{background:var(--surface-soft);}
+  tr.reason-row.active td{background:var(--accent-soft);}
+  tr.reason-row.active .entity-name{color:var(--accent-ink);}
+  .table-scroll{overflow-x:auto; border:1px solid var(--line); border-radius:12px; background:var(--surface);}
+  table{width:100%; border-collapse:collapse; min-width:900px;}
+  thead th{text-align:left; font-size:.66rem; text-transform:uppercase; letter-spacing:.03em; color:var(--ink-muted); background:var(--surface-soft); padding:10px 10px; border-bottom:1px solid var(--line); position:sticky; top:0; white-space:nowrap;}
+  thead th.num{text-align:right;}
+  thead th.grp-mql{border-left:2px solid var(--bar);}
+  thead th.grp-sql{border-left:2px solid var(--bar2);}
+  thead th.grp-venda{border-left:2px solid var(--good);}
+  tbody td{padding:7px 10px; border-bottom:1px solid var(--line-soft); font-size:.83rem; vertical-align:middle;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr.lvl-hidden{display:none;}
+  td.num{text-align:right; font-family:var(--mono); font-variant-numeric:tabular-nums; white-space:nowrap;}
+  td.grp-mql{border-left:2px solid var(--bar);}
+  td.grp-sql{border-left:2px solid var(--bar2);}
+  td.grp-venda{border-left:2px solid var(--good);}
+  .name-cell{display:flex; align-items:center; gap:8px;}
+  .toggle{flex:none; width:18px; height:18px; border-radius:4px; border:1px solid var(--line); background:var(--surface-raised); color:var(--ink-soft); font-size:.6rem; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:transform .15s ease;}
+  .toggle:focus-visible{outline:2px solid var(--accent); outline-offset:1px;}
+  tr[data-open="true"] > td .toggle{transform:rotate(90deg); color:var(--accent);}
+  .toggle-spacer{flex:none; width:18px; height:18px;}
+  .row-flag{flex:none; width:7px; height:7px; border-radius:50%;}
+  .row-flag.investir{background:var(--good);}
+  .row-flag.observar{background:var(--warning);}
+  .row-flag.cortar{background:var(--critical);}
+  .row-flag.neutro{background:var(--ink-muted); opacity:.4;}
+  .entity-name{font-weight:600;}
+  tr[data-level="0"] .entity-name{font-weight:700;}
+  tr[data-level="1"] .entity-name{font-weight:600; font-size:.86rem;}
+  tr[data-level="2"] .entity-name{font-weight:500; font-size:.83rem; color:var(--ink-soft);}
+  tr[data-level="1"]{background:var(--surface-soft);}
+  tr[data-level="2"]{background:var(--surface-raised);}
+  .metric-stack{display:flex; flex-direction:column; align-items:flex-end; gap:2px;}
+  .metric-value{font-weight:600;}
+  .delta{display:inline-flex; align-items:center; gap:2px; font-size:.64rem; font-weight:600; padding:1px 6px; border-radius:20px; font-family:var(--sans); white-space:nowrap;}
+  .delta.good{color:var(--good); background:var(--good-bg);}
+  .delta.critical{color:var(--critical); background:var(--critical-bg);}
+  .delta.neutral{color:var(--ink-muted); background:var(--neutral-bg);}
+  .rate-cell{display:flex; flex-direction:column; align-items:flex-end; gap:4px; min-width:110px;}
+  .rate-top{display:flex; align-items:baseline; gap:6px;}
+  .rate-track{width:100%; height:6px; border-radius:3px; background:var(--bar-track); overflow:hidden;}
+  .rate-fill{height:100%; border-radius:3px; background:var(--bar);}
+  .rate-fill.sql{background:var(--bar2);}
+  .rate-fill.warn{background:var(--critical);}
+  .mix-cell{display:flex; flex-direction:column; gap:6px; min-width:270px; padding:4px 0;}
+  .mix-track{display:flex; gap:2px; height:10px; border-radius:5px; overflow:hidden; background:var(--surface-soft);}
+  .mix-seg{height:100%;}
+  .mix-seg.seg-qual{background:var(--good);}
+  .mix-seg.seg-desq{background:var(--critical);}
+  .mix-seg.seg-aberto{background:var(--warning);}
+  .mix-legend{display:flex; gap:12px; flex-wrap:wrap; font-size:.7rem; color:var(--ink-soft); font-family:var(--mono); font-variant-numeric:tabular-nums;}
+  .mix-item{display:inline-flex; align-items:center; gap:4px; white-space:nowrap;}
+  .dot.qual{background:var(--good);}
+  .dot.desq{background:var(--critical);}
+  .dot.aberto{background:var(--warning);}
+  .note{padding:14px 16px; border:1px dashed var(--line); border-radius:10px; font-size:.8rem; color:var(--ink-soft); background:var(--surface);}
+  .note strong{color:var(--ink);}
+  footer{padding-top:16px; border-top:1px solid var(--line); font-size:.72rem; color:var(--ink-muted); text-align:center;}
+  @media (max-width:880px){.decision{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="titles">
+      <h1>Otimização de Campanhas — {{CLIENTE}}</h1>
+      <div class="sub">
+        CRM: <b>{{CRM}}</b> · Período: <b>{{PERIODO_INICIO}} a {{PERIODO_FIM}}</b><br/>
+        Etapas confirmadas — MQL: <b>{{ETAPA_MQL}}</b> · {{ROTULO_SQL}}: <b>{{ETAPA_SQL}}</b> · {{ROTULO_VENDA}}: <b>{{ETAPA_VENDA}}</b>
+      </div>
+    </div>
+    <div class="tag">{{SELO}}</div>
+  </header>
+
+  <div class="tabs">
+    <button class="tab-btn active" type="button" data-tab="geral">Geral</button>
+    <button class="tab-btn" type="button" data-tab="mql">Qualificação (funil completo)</button>
+    <button class="tab-btn" type="button" data-tab="lost">Desqualificação</button>
+  </div>
+
+  <!-- ===================== TAB: GERAL ===================== -->
+  <div class="tab-panel active" id="panel-geral">
+    <div class="kpi-row">
+      <div class="kpi"><div class="label">Investimento total</div><div class="value" id="kpi-g-invest"></div></div>
+      <div class="kpi"><div class="label">Leads</div><div class="value" id="kpi-g-leads"></div></div>
+      <div class="kpi"><div class="label">Qualificados (MQL+)</div><div class="value" id="kpi-g-qual"></div><div class="subvalue" id="kpi-g-qual-rate"></div></div>
+      <div class="kpi"><div class="label">Desqualificados</div><div class="value" id="kpi-g-desq"></div><div class="subvalue" id="kpi-g-desq-rate"></div></div>
+      <div class="kpi"><div class="label">Em aberto</div><div class="value" id="kpi-g-aberto"></div><div class="subvalue" id="kpi-g-aberto-rate"></div></div>
+    </div>
+
+    <div class="decision single">
+      <div class="card attn">
+        <h3>⚠ Onde tem mais lead parado</h3>
+        <div class="hint">Maior taxa de "em aberto" — ainda não virou MQL nem foi pra Perdido. Mínimo de 8 leads pra entrar no ranking.</div>
+        <ul id="open-worst-list"></ul>
+      </div>
+    </div>
+
+    <section>
+      <div class="section-head">
+        <h2>Meta Ads <span class="platform-badge">Campanha → Público → Anúncio</span></h2>
+        <div class="legend">
+          <span><i class="dot qual"></i> qualificado</span><span><i class="dot desq"></i> desqualificado</span><span><i class="dot aberto"></i> em aberto</span>
+          <span>Clique na linha pra abrir o próximo nível ↴</span>
+        </div>
+        <div class="sort-bar" data-for="meta-tbody-geral"></div>
+      </div>
+      <div class="table-scroll"><table><thead><tr><th>Campanha / Público / Anúncio</th><th class="num">Investimento</th><th class="num">Leads</th><th>Distribuição</th></tr></thead><tbody id="meta-tbody-geral"></tbody></table></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Google Ads <span class="platform-badge">Campanha → Grupo de Anúncios → Anúncio</span></h2>
+        <div class="legend">
+          <span><i class="dot qual"></i> qualificado</span><span><i class="dot desq"></i> desqualificado</span><span><i class="dot aberto"></i> em aberto</span>
+          <span>Clique na linha pra abrir o próximo nível ↴</span>
+        </div>
+        <div class="sort-bar" data-for="google-tbody-geral"></div>
+      </div>
+      <div class="table-scroll"><table><thead><tr><th>Campanha / Grupo / Anúncio</th><th class="num">Investimento</th><th class="num">Leads</th><th>Distribuição</th></tr></thead><tbody id="google-tbody-geral"></tbody></table></div>
+    </section>
+
+
+    {{SECOES_EXTRAS_GERAL}}
+    <div class="note">
+      <strong>Leitura da distribuição:</strong> todo lead pago está em exatamente um dos três estados — Qualificado (alcançou MQL+ alguma vez, verde), Desqualificado
+      (Perdido sem nunca ter qualificado, vermelho) ou Em aberto (âmbar, ainda em atendimento). A barra soma 100% dos leads da linha.
+      <br/><br/>
+      {{NOTA_GERAL}}
+    </div>
+  </div>
+
+  <!-- ===================== TAB: QUALIFICAÇÃO (funil completo) ===================== -->
+  <div class="tab-panel" id="panel-mql">
+    <div class="kpi-row">
+      <div class="kpi"><div class="label">Investimento total</div><div class="value" id="kpi-invest"></div></div>
+      <div class="kpi"><div class="label">Leads</div><div class="value" id="kpi-leads"></div></div>
+      <div class="kpi stage-mql"><div class="label">MQL</div><div class="value" id="kpi-mql"></div><div class="subvalue" id="kpi-rate-mql"></div></div>
+      <div class="kpi stage-mql"><div class="label">Custo / MQL</div><div class="value" id="kpi-cost-mql"></div></div>
+      <div class="kpi stage-sql"><div class="label">{{ROTULO_SQL}}</div><div class="value" id="kpi-sql"></div><div class="subvalue" id="kpi-rate-sql"></div></div>
+      <div class="kpi stage-sql"><div class="label">Custo / {{ROTULO_SQL}}</div><div class="value" id="kpi-cost-sql"></div></div>
+      <div class="kpi stage-venda"><div class="label">{{ROTULO_VENDA}}</div><div class="value" id="kpi-venda"></div><div class="subvalue" id="kpi-rate-venda"></div></div>
+      <div class="kpi stage-venda"><div class="label">Custo / {{ROTULO_VENDA}}</div><div class="value" id="kpi-cost-venda"></div></div>
+    </div>
+
+    <div class="note">{{NOTA_MQL}}</div>
+
+    <div class="decision">
+      <div class="card invest">
+        <h3>▲ Investir mais</h3>
+        <div class="hint">Menor custo por MQL, volume suficiente pra confiar no número</div>
+        <ul id="invest-more-list"></ul>
+      </div>
+      <div class="card cut">
+        <h3>▼ Investir menos / pausar</h3>
+        <div class="hint">Maior custo por MQL entre quem já tem volume mínimo</div>
+        <ul id="invest-less-list"></ul>
+      </div>
+    </div>
+
+    <section>
+      <div class="section-head">
+        <h2>Meta Ads <span class="platform-badge">Campanha → Público → Anúncio</span></h2>
+        <div class="legend"><span><i class="dot investir"></i> investir mais</span><span><i class="dot observar"></i> observar</span><span><i class="dot cortar"></i> investir menos</span><span>Flag por Custo/MQL · Clique pra abrir ↴</span></div>
+        <div class="sort-bar" data-for="meta-tbody-mql"></div>
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead><tr>
+            <th rowspan="1">Campanha / Público / Anúncio</th>
+            <th class="num">Investimento</th><th class="num">Leads</th>
+            <th class="num grp-mql">MQL</th><th class="num">Custo/MQL</th><th class="num">Taxa MQL</th>
+            <th class="num grp-sql">{{ROTULO_SQL}}</th><th class="num">Custo/{{ROTULO_SQL}}</th><th class="num">Taxa {{ROTULO_SQL}}</th>
+            <th class="num grp-venda">{{ROTULO_VENDA}}</th>
+          </tr></thead>
+          <tbody id="meta-tbody-mql"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Google Ads <span class="platform-badge">Campanha → Grupo de Anúncios → Anúncio</span></h2>
+        <div class="legend"><span><i class="dot investir"></i> investir mais</span><span><i class="dot observar"></i> observar</span><span><i class="dot cortar"></i> investir menos</span><span>Flag por Custo/MQL · Clique pra abrir ↴</span></div>
+        <div class="sort-bar" data-for="google-tbody-mql"></div>
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead><tr>
+            <th>Campanha / Grupo / Anúncio</th>
+            <th class="num">Investimento</th><th class="num">Leads</th>
+            <th class="num grp-mql">MQL</th><th class="num">Custo/MQL</th><th class="num">Taxa MQL</th>
+            <th class="num grp-sql">{{ROTULO_SQL}}</th><th class="num">Custo/{{ROTULO_SQL}}</th><th class="num">Taxa {{ROTULO_SQL}}</th>
+            <th class="num grp-venda">{{ROTULO_VENDA}}</th>
+          </tr></thead>
+          <tbody id="google-tbody-mql"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><h2>Ranking por palavra-chave <span class="platform-badge">Google Ads</span></h2><div class="sort-bar" data-for="google-kw-tbody"></div></div>
+      <div class="table-scroll">
+        <table>
+          <thead><tr>
+            <th>Palavra-chave</th><th class="num">Investimento</th><th class="num">Leads</th>
+            <th class="num grp-mql">MQL</th><th class="num">Custo/MQL</th><th class="num">Taxa MQL</th>
+            <th class="num grp-sql">{{ROTULO_SQL}}</th><th class="num">Taxa {{ROTULO_SQL}}</th>
+            <th class="num grp-venda">{{ROTULO_VENDA}}</th>
+          </tr></thead>
+          <tbody id="google-kw-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><h2>Qualificados que não fecharam <span class="platform-badge">alcançaram MQL, mas etapa atual é Perdido</span></h2></div>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Motivo de perda (depois de já ter qualificado)</th><th class="num">Leads</th><th class="num">% do grupo</th></tr></thead>
+          <tbody id="qualified-lost-tbody"></tbody>
+        </table>
+      </div>
+      <div class="note">{{NOTA_QUALIFICADOS_PERDIDOS}}</div>
+    </section>
+
+    <div class="note">
+      <strong>Qualificado = alcançou MQL alguma vez</strong>, calculado pelo maior estágio já alcançado no histórico do CRM (não só a etapa atual) — um lead que virou MQL e
+      depois foi perdido continua contando como qualificado aqui.
+      <br/><br/>
+      <strong>Leitura do delta:</strong> cada Custo/MQL e Custo/SQL traz selo comparando com a média dos itens do mesmo nível (campanha×campanha, público×público,
+      anúncio×anúncio) — verde puxando pra cima, vermelho pra baixo, cinza dentro de ±8%. Itens com menos de 3 MQL ficam fora do ranking "Investir mais/menos" por baixo
+      volume, mas continuam visíveis nas tabelas.
+      <br/><br/>
+      {{NOTA_QUALIDADE}}
+    </div>
+  </div>
+
+  <!-- ===================== TAB: DESQUALIFICAÇÃO ===================== -->
+  <div class="tab-panel" id="panel-lost">
+    <div class="kpi-row">
+      <div class="kpi"><div class="label">Leads pagos totais</div><div class="value" id="kpi-leads-lost"></div></div>
+      <div class="kpi"><div class="label">Desqualificados</div><div class="value" id="kpi-lost"></div></div>
+      <div class="kpi"><div class="label">Taxa de desqualificação</div><div class="value" id="kpi-rate-lost"></div></div>
+      <div class="kpi"><div class="label">Motivo mais frequente</div><div class="value small" id="kpi-top-reason"></div></div>
+    </div>
+
+    <div class="decision">
+      <div class="card invest"><h3>▲ Menor taxa de desqualificação</h3><div class="hint">Onde o lead que entra mais vira MQL de verdade</div><ul id="lost-best-list"></ul></div>
+      <div class="card cut"><h3>▼ Maior taxa de desqualificação</h3><div class="hint">Onde mais lead vira "Perdido" — revisar público/anúncio/qualificação</div><ul id="lost-worst-list"></ul></div>
+    </div>
+
+    <section>
+      <div class="section-head">
+        <h2>Meta Ads <span class="platform-badge">Campanha → Público → Anúncio</span></h2>
+        <div class="legend"><span><i class="dot investir"></i> saudável</span><span><i class="dot observar"></i> atenção</span><span><i class="dot cortar"></i> crítico</span><span>Clique pra abrir ↴</span></div>
+        <div class="sort-bar" data-for="meta-tbody-lost"></div>
+      </div>
+      <div class="table-scroll"><table><thead><tr><th>Campanha / Público / Anúncio</th><th class="num">Investimento</th><th class="num">Leads</th><th class="num">Desqualificados</th><th class="num">Taxa de Desqualificação</th></tr></thead><tbody id="meta-tbody-lost"></tbody></table></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Google Ads <span class="platform-badge">Campanha → Grupo de Anúncios → Anúncio</span></h2>
+        <div class="legend"><span><i class="dot investir"></i> saudável</span><span><i class="dot observar"></i> atenção</span><span><i class="dot cortar"></i> crítico</span><span>Clique pra abrir ↴</span></div>
+        <div class="sort-bar" data-for="google-tbody-lost"></div>
+      </div>
+      <div class="table-scroll"><table><thead><tr><th>Campanha / Grupo / Anúncio</th><th class="num">Investimento</th><th class="num">Leads</th><th class="num">Desqualificados</th><th class="num">Taxa de Desqualificação</th></tr></thead><tbody id="google-tbody-lost"></tbody></table></div>
+    </section>
+
+    <section>
+      <div class="section-head"><h2>Ranking por motivo de perda <span class="platform-badge">Meta + Google</span></h2><div id="reason-filter-chip"></div></div>
+      <div class="legend"><span>Clique num motivo pra filtrar as árvores de campanha acima só por ele ↑</span></div>
+      <div class="table-scroll"><table><thead><tr><th>Motivo de perda</th><th class="num">Leads perdidos</th><th class="num">% dos desqualificados</th></tr></thead><tbody id="loss-reason-tbody"></tbody></table></div>
+    </section>
+
+    <div class="note">
+      <strong>Escopo:</strong> aqui só entra quem foi perdido <u>sem nunca ter alcançado MQL</u> — quem qualificou e foi perdido depois está na aba
+      Qualificação, em "Qualificados que não fecharam".
+      <br/><br/>
+      {{NOTA_QUALIDADE_MOTIVO}}{{NOTA_DESQUALIFICACAO}}
+    </div>
+  </div>
+
+  <footer>
+    Gerado por /otimizacao-campanhas · Etapas confirmadas pelo usuário nesta rodada · {{DATA_GERACAO}}
+  </footer>
+
+</div>
+
+<script>
+const fmtMoney = v => v == null ? '—' : 'R$ ' + Math.round(v).toLocaleString('pt-BR');
+const pct = (a, b) => b > 0 ? (a / b) * 100 : 0;
+const fmtPct = v => v.toFixed(1).replace('.', ',') + '%';
+const fmtInt = v => v.toLocaleString('pt-BR');
+
+const META_TREE = [{"id": "n1", "name": "Remarketing Quente", "invest": 3060.29, "leads": 85, "mql": 48, "sql": 29, "venda": 11, "lost": 19, "qlost": 18, "lostReasons": {"Fora do perfil": 4, "(sem motivo preenchido)": 2, "Sem resposta": 7, "Sem orçamento": 3, "Escolheu concorrente": 3}, "qualifiedLostReasons": {"Sem orçamento": 4, "Sem resposta": 6, "Fora do perfil": 3, "(sem motivo preenchido)": 2, "Escolheu concorrente": 3}, "children": [{"id": "n2", "name": "Lookalike 1% Compradores", "invest": 1663.1, "leads": 47, "mql": 24, "sql": 15, "venda": 5, "lost": 9, "qlost": 8, "lostReasons": {"Fora do perfil": 3, "(sem motivo preenchido)": 2, "Sem resposta": 2, "Sem orçamento": 2}, "qualifiedLostReasons": {"Sem orçamento": 1, "Sem resposta": 4, "Fora do perfil": 1, "(sem motivo preenchido)": 1, "Escolheu concorrente": 1}, "children": [{"id": "n3", "name": "Carrossel Depoimentos", "invest": 1323.08, "leads": 31, "mql": 19, "sql": 12, "venda": 4, "lost": 5, "qlost": 7, "lostReasons": {"Fora do perfil": 1, "(sem motivo preenchido)": 2, "Sem resposta": 1, "Sem orçamento": 1}, "qualifiedLostReasons": {"Sem orçamento": 1, "Sem resposta": 4, "Fora do perfil": 1, "(sem motivo preenchido)": 1}}, {"id": "n5", "name": "Vídeo Prova Social", "invest": 340.02, "leads": 16, "mql": 5, "sql": 3, "venda": 1, "lost": 4, "qlost": 1, "lostReasons": {"Fora do perfil": 2, "Sem orçamento": 1, "Sem resposta": 1}, "qualifiedLostReasons": {"Escolheu concorrente": 1}}]}, {"id": "n7", "name": "Retargeting 7 dias", "invest": 1397.19, "leads": 38, "mql": 24, "sql": 14, "venda": 6, "lost": 10, "qlost": 10, "lostReasons": {"Sem resposta": 5, "Escolheu concorrente": 3, "Sem orçamento": 1, "Fora do perfil": 1}, "qualifiedLostReasons": {"Sem orçamento": 3, "Fora do perfil": 2, "(sem motivo preenchido)": 1, "Escolheu concorrente": 2, "Sem resposta": 2}, "children": [{"id": "n8", "name": "Oferta Limitada", "invest": 740.05, "leads": 17, "mql": 9, "sql": 4, "venda": 2, "lost": 8, "qlost": 4, "lostReasons": {"Sem resposta": 3, "Escolheu concorrente": 3, "Sem orçamento": 1, "Fora do perfil": 1}, "qualifiedLostReasons": {"Sem orçamento": 2, "Fora do perfil": 1, "(sem motivo preenchido)": 1}}, {"id": "n10", "name": "Antes e Depois", "invest": 657.14, "leads": 21, "mql": 15, "sql": 10, "venda": 4, "lost": 2, "qlost": 6, "lostReasons": {"Sem resposta": 2}, "qualifiedLostReasons": {"Escolheu concorrente": 2, "Sem resposta": 2, "Fora do perfil": 1, "Sem orçamento": 1}}]}]}, {"id": "n11", "name": "Interesse Amplo", "invest": 5027.66, "leads": 77, "mql": 10, "sql": 6, "venda": 2, "lost": 31, "qlost": 3, "lostReasons": {"(sem motivo preenchido)": 5, "Sem orçamento": 7, "Sem resposta": 5, "Escolheu concorrente": 5, "Fora do perfil": 9}, "qualifiedLostReasons": {"Escolheu concorrente": 1, "(sem motivo preenchido)": 1, "Fora do perfil": 1}, "children": [{"id": "n12", "name": "Interesse Marketing", "invest": 2861.07, "leads": 45, "mql": 2, "sql": 1, "venda": 0, "lost": 21, "qlost": 1, "lostReasons": {"(sem motivo preenchido)": 4, "Sem orçamento": 5, "Sem resposta": 4, "Escolheu concorrente": 3, "Fora do perfil": 5}, "qualifiedLostReasons": {"Escolheu concorrente": 1}, "children": [{"id": "n13", "name": "Imagem Institucional", "invest": 1478.35, "leads": 16, "mql": 1, "sql": 1, "venda": 0, "lost": 5, "qlost": 1, "lostReasons": {"(sem motivo preenchido)": 1, "Sem orçamento": 1, "Sem resposta": 1, "Escolheu concorrente": 1, "Fora do perfil": 1}, "qualifiedLostReasons": {"Escolheu concorrente": 1}}, {"id": "n15", "name": "Vídeo Longo", "invest": 1382.72, "leads": 29, "mql": 1, "sql": 0, "venda": 0, "lost": 16, "qlost": 0, "lostReasons": {"Sem resposta": 3, "(sem motivo preenchido)": 3, "Sem orçamento": 4, "Fora do perfil": 4, "Escolheu concorrente": 2}, "qualifiedLostReasons": {}}]}, {"id": "n17", "name": "Interesse Negócios", "invest": 2166.59, "leads": 32, "mql": 8, "sql": 5, "venda": 2, "lost": 10, "qlost": 2, "lostReasons": {"Fora do perfil": 4, "Sem orçamento": 2, "Escolheu concorrente": 2, "Sem resposta": 1, "(sem motivo preenchido)": 1}, "qualifiedLostReasons": {"(sem motivo preenchido)": 1, "Fora do perfil": 1}, "children": [{"id": "n18", "name": "Carrossel Produto", "invest": 1727.49, "leads": 18, "mql": 4, "sql": 3, "venda": 1, "lost": 7, "qlost": 0, "lostReasons": {"Fora do perfil": 2, "Sem orçamento": 2, "Escolheu concorrente": 2, "Sem resposta": 1}, "qualifiedLostReasons": {}}, {"id": "n20", "name": "Estático Preço", "invest": 439.1, "leads": 14, "mql": 4, "sql": 2, "venda": 1, "lost": 3, "qlost": 2, "lostReasons": {"Fora do perfil": 2, "(sem motivo preenchido)": 1}, "qualifiedLostReasons": {"(sem motivo preenchido)": 1, "Fora do perfil": 1}}]}]}, {"id": "n21", "name": "Teste Replicado", "invest": 1322.75, "leads": 55, "mql": 15, "sql": 5, "venda": 2, "lost": 19, "qlost": 8, "lostReasons": {"Escolheu concorrente": 8, "Fora do perfil": 3, "Sem orçamento": 4, "Sem resposta": 2, "(sem motivo preenchido)": 2}, "qualifiedLostReasons": {"Sem orçamento": 3, "Fora do perfil": 2, "(sem motivo preenchido)": 2, "Sem resposta": 1}, "children": [{"id": "n22", "name": "Público A", "invest": 975.07, "leads": 12, "mql": 4, "sql": 2, "venda": 2, "lost": 5, "qlost": 2, "lostReasons": {"Escolheu concorrente": 4, "Fora do perfil": 1}, "qualifiedLostReasons": {"Sem orçamento": 1, "Fora do perfil": 1}, "children": [{"id": "n23", "name": "Ad Replicado", "invest": 975.07, "leads": 12, "mql": 4, "sql": 2, "venda": 2, "lost": 5, "qlost": 2, "lostReasons": {"Escolheu concorrente": 4, "Fora do perfil": 1}, "qualifiedLostReasons": {"Sem orçamento": 1, "Fora do perfil": 1}}]}, {"id": "n25", "name": "Público B", "invest": 347.68, "leads": 34, "mql": 7, "sql": 1, "venda": 0, "lost": 11, "qlost": 3, "lostReasons": {"Sem orçamento": 3, "Sem resposta": 2, "(sem motivo preenchido)": 2, "Fora do perfil": 1, "Escolheu concorrente": 3}, "qualifiedLostReasons": {"(sem motivo preenchido)": 1, "Fora do perfil": 1, "Sem orçamento": 1}, "children": [{"id": "n26", "name": "Ad Replicado", "invest": 347.68, "leads": 34, "mql": 7, "sql": 1, "venda": 0, "lost": 11, "qlost": 3, "lostReasons": {"Sem orçamento": 3, "Sem resposta": 2, "(sem motivo preenchido)": 2, "Fora do perfil": 1, "Escolheu concorrente": 3}, "qualifiedLostReasons": {"(sem motivo preenchido)": 1, "Fora do perfil": 1, "Sem orçamento": 1}}]}, {"id": "n48", "name": "(Anúncio replicado em vários públicos/grupos: sem como saber qual gerou o lead)", "invest": 0.0, "leads": 9, "mql": 4, "sql": 2, "venda": 0, "lost": 3, "qlost": 3, "lostReasons": {"Escolheu concorrente": 1, "Sem orçamento": 1, "Fora do perfil": 1}, "qualifiedLostReasons": {"Sem resposta": 1, "(sem motivo preenchido)": 1, "Sem orçamento": 1}, "synthetic": true}]}, {"id": "n49", "name": "(Campanha da UTM sem gasto no período / não encontrada na mídia)", "invest": 0.0, "leads": 4, "mql": 1, "sql": 1, "venda": 1, "lost": 1, "qlost": 0, "lostReasons": {"Fora do perfil": 1}, "qualifiedLostReasons": {}, "synthetic": true, "children": [{"id": "n50", "name": "Campanha Antiga Excluída", "invest": 0.0, "leads": 4, "mql": 1, "sql": 1, "venda": 1, "lost": 1, "qlost": 0, "lostReasons": {"Fora do perfil": 1}, "qualifiedLostReasons": {}, "synthetic": true}]}, {"id": "n54", "name": "(UTM quebrada: macro não substituída)", "invest": 0.0, "leads": 3, "mql": 2, "sql": 2, "venda": 0, "lost": 1, "qlost": 2, "lostReasons": {"Sem orçamento": 1}, "qualifiedLostReasons": {"(sem motivo preenchido)": 1, "Sem orçamento": 1}, "synthetic": true}];
+const GOOGLE_TREE = [{"id": "n27", "name": "Search Marca", "invest": 1332.59, "leads": 33, "mql": 22, "sql": 16, "venda": 8, "lost": 8, "qlost": 12, "lostReasons": {"(sem motivo preenchido)": 2, "Sem orçamento": 2, "Fora do perfil": 2, "Escolheu concorrente": 1, "Sem resposta": 1}, "qualifiedLostReasons": {"Escolheu concorrente": 2, "Sem orçamento": 1, "Sem resposta": 2, "Fora do perfil": 4, "(sem motivo preenchido)": 3}, "children": [{"id": "n28", "name": "Marca Exata", "invest": 1332.59, "leads": 33, "mql": 22, "sql": 16, "venda": 8, "lost": 8, "qlost": 12, "lostReasons": {"(sem motivo preenchido)": 2, "Sem orçamento": 2, "Fora do perfil": 2, "Escolheu concorrente": 1, "Sem resposta": 1}, "qualifiedLostReasons": {"Escolheu concorrente": 2, "Sem orçamento": 1, "Sem resposta": 2, "Fora do perfil": 4, "(sem motivo preenchido)": 3}, "children": [{"id": "n29", "name": "ad01", "invest": 501.43, "leads": 21, "mql": 15, "sql": 11, "venda": 4, "lost": 4, "qlost": 9, "lostReasons": {"(sem motivo preenchido)": 1, "Sem orçamento": 1, "Fora do perfil": 2}, "qualifiedLostReasons": {"Escolheu concorrente": 1, "Sem orçamento": 1, "Sem resposta": 2, "Fora do perfil": 3, "(sem motivo preenchido)": 2}}, {"id": "n31", "name": "ad02", "invest": 831.16, "leads": 12, "mql": 7, "sql": 5, "venda": 4, "lost": 4, "qlost": 3, "lostReasons": {"Sem orçamento": 1, "Escolheu concorrente": 1, "(sem motivo preenchido)": 1, "Sem resposta": 1}, "qualifiedLostReasons": {"Fora do perfil": 1, "Escolheu concorrente": 1, "(sem motivo preenchido)": 1}}]}]}, {"id": "n32", "name": "Search Serviço", "invest": 1756.55, "leads": 67, "mql": 24, "sql": 10, "venda": 2, "lost": 24, "qlost": 15, "lostReasons": {"Sem orçamento": 6, "Sem resposta": 7, "Escolheu concorrente": 5, "Fora do perfil": 4, "(sem motivo preenchido)": 2}, "qualifiedLostReasons": {"Sem orçamento": 4, "Sem resposta": 2, "Fora do perfil": 3, "Escolheu concorrente": 5, "(sem motivo preenchido)": 1}, "children": [{"id": "n33", "name": "Serviço Principal", "invest": 759.18, "leads": 41, "mql": 13, "sql": 6, "venda": 1, "lost": 16, "qlost": 9, "lostReasons": {"Sem orçamento": 3, "Sem resposta": 6, "Escolheu concorrente": 3, "Fora do perfil": 3, "(sem motivo preenchido)": 1}, "qualifiedLostReasons": {"Sem orçamento": 4, "Sem resposta": 1, "Fora do perfil": 2, "Escolheu concorrente": 2}, "children": [{"id": "n34", "name": "ad01", "invest": 280.52, "leads": 21, "mql": 9, "sql": 3, "venda": 0, "lost": 5, "qlost": 6, "lostReasons": {"Sem orçamento": 2, "Sem resposta": 1, "Escolheu concorrente": 1, "Fora do perfil": 1}, "qualifiedLostReasons": {"Sem orçamento": 2, "Sem resposta": 1, "Fora do perfil": 1, "Escolheu concorrente": 2}}, {"id": "n36", "name": "ad02", "invest": 478.66, "leads": 20, "mql": 4, "sql": 3, "venda": 1, "lost": 11, "qlost": 3, "lostReasons": {"Sem orçamento": 1, "Escolheu concorrente": 2, "Sem resposta": 5, "(sem motivo preenchido)": 1, "Fora do perfil": 2}, "qualifiedLostReasons": {"Sem orçamento": 2, "Fora do perfil": 1}}]}, {"id": "n38", "name": "Serviço Cidade", "invest": 997.37, "leads": 26, "mql": 11, "sql": 4, "venda": 1, "lost": 8, "qlost": 6, "lostReasons": {"Escolheu concorrente": 2, "Sem orçamento": 3, "(sem motivo preenchido)": 1, "Sem resposta": 1, "Fora do perfil": 1}, "qualifiedLostReasons": {"Fora do perfil": 1, "(sem motivo preenchido)": 1, "Escolheu concorrente": 3, "Sem resposta": 1}, "children": [{"id": "n39", "name": "ad01", "invest": 997.37, "leads": 26, "mql": 11, "sql": 4, "venda": 1, "lost": 8, "qlost": 6, "lostReasons": {"Escolheu concorrente": 2, "Sem orçamento": 3, "(sem motivo preenchido)": 1, "Sem resposta": 1, "Fora do perfil": 1}, "qualifiedLostReasons": {"Fora do perfil": 1, "(sem motivo preenchido)": 1, "Escolheu concorrente": 3, "Sem resposta": 1}}]}]}, {"id": "n40", "name": "Display Genérico", "invest": 876.68, "leads": 10, "mql": 0, "sql": 0, "venda": 0, "lost": 8, "qlost": 0, "lostReasons": {"(sem motivo preenchido)": 4, "Escolheu concorrente": 1, "Sem resposta": 1, "Sem orçamento": 2}, "qualifiedLostReasons": {}, "children": [{"id": "n41", "name": "Afinidade", "invest": 876.68, "leads": 10, "mql": 0, "sql": 0, "venda": 0, "lost": 8, "qlost": 0, "lostReasons": {"(sem motivo preenchido)": 4, "Escolheu concorrente": 1, "Sem resposta": 1, "Sem orçamento": 2}, "qualifiedLostReasons": {}, "children": [{"id": "n42", "name": "ad01", "invest": 876.68, "leads": 10, "mql": 0, "sql": 0, "venda": 0, "lost": 8, "qlost": 0, "lostReasons": {"(sem motivo preenchido)": 4, "Escolheu concorrente": 1, "Sem resposta": 1, "Sem orçamento": 2}, "qualifiedLostReasons": {}}]}]}];
+const GOOGLE_KEYWORDS = [{"id": "n43", "name": "acme consultoria", "invest": 156.99, "leads": 13, "mql": 10, "sql": 8, "venda": 4, "lost": 2, "qlost": 5, "lostReasons": {"(sem motivo preenchido)": 1, "Fora do perfil": 1}, "qualifiedLostReasons": {"Sem orçamento": 1, "Sem resposta": 1, "Fora do perfil": 1, "(sem motivo preenchido)": 2}}, {"id": "n44", "name": "acme telefone", "invest": 319.28, "leads": 20, "mql": 12, "sql": 8, "venda": 4, "lost": 6, "qlost": 7, "lostReasons": {"Sem orçamento": 2, "Fora do perfil": 1, "Escolheu concorrente": 1, "(sem motivo preenchido)": 1, "Sem resposta": 1}, "qualifiedLostReasons": {"Escolheu concorrente": 2, "Sem resposta": 1, "Fora do perfil": 3, "(sem motivo preenchido)": 1}}, {"id": "n45", "name": "consultoria financeira", "invest": 416.15, "leads": 22, "mql": 5, "sql": 3, "venda": 1, "lost": 11, "qlost": 3, "lostReasons": {"Sem orçamento": 1, "Sem resposta": 4, "Escolheu concorrente": 3, "Fora do perfil": 3}, "qualifiedLostReasons": {"Escolheu concorrente": 1, "Sem orçamento": 2}}, {"id": "n46", "name": "consultoria para empresas", "invest": 62.86, "leads": 19, "mql": 8, "sql": 3, "venda": 0, "lost": 5, "qlost": 6, "lostReasons": {"Sem orçamento": 2, "Sem resposta": 2, "(sem motivo preenchido)": 1}, "qualifiedLostReasons": {"Sem orçamento": 2, "Sem resposta": 1, "Fora do perfil": 2, "Escolheu concorrente": 1}}, {"id": "n47", "name": "consultoria financeira campinas", "invest": 414.56, "leads": 26, "mql": 11, "sql": 4, "venda": 1, "lost": 8, "qlost": 6, "lostReasons": {"Escolheu concorrente": 2, "Sem orçamento": 3, "(sem motivo preenchido)": 1, "Sem resposta": 1, "Fora do perfil": 1}, "qualifiedLostReasons": {"Fora do perfil": 1, "(sem motivo preenchido)": 1, "Escolheu concorrente": 3, "Sem resposta": 1}}];
+const LOSS_REASONS = [{"name": "Fora do perfil", "qty": 23}, {"name": "(sem motivo preenchido)", "qty": 17}, {"name": "Sem resposta", "qty": 23}, {"name": "Sem orçamento", "qty": 25}, {"name": "Escolheu concorrente", "qty": 23}];
+const QUALIFIED_LOST_REASONS = [{"name": "Sem orçamento", "qty": 13}, {"name": "Sem resposta", "qty": 11}, {"name": "Fora do perfil", "qty": 13}, {"name": "(sem motivo preenchido)", "qty": 10}, {"name": "Escolheu concorrente", "qty": 11}];
+const QUALIFIED_LOST_TOTAL = QUALIFIED_LOST_REASONS.reduce((s, r) => s + r.qty, 0);
+
+const MQL_MODE = { countKey:'mql', countLabel:'MQL', showCost:true, higherIsBetterRate:true, flagBasis:'cost', goodThreshold:-20, badThreshold:40 };
+const LOST_MODE = { countKey:'lost', countLabel:'Desqualificados', showCost:false, higherIsBetterRate:false, flagBasis:'rate', goodThreshold:-20, badThreshold:40 };
+
+let ACTIVE_LOST_REASON = null;
+function countOf(node, mode){
+  if (mode === LOST_MODE && ACTIVE_LOST_REASON) return (node.lostReasons && node.lostReasons[ACTIVE_LOST_REASON]) || 0;
+  return node[mode.countKey] || 0;
+}
+function rateOf(node, mode){ return node.leads > 0 ? (countOf(node, mode) / node.leads) * 100 : 0; }
+function costOfStage(node, key){ return node[key] > 0 && node.invest > 0 ? node.invest / node[key] : NaN; }
+
+function collectByDepth(nodes, depth, acc){
+  acc[depth] = acc[depth] || [];
+  nodes.forEach(n => { if (!n.synthetic) acc[depth].push(n); if (n.children) collectByDepth(n.children, depth + 1, acc); });
+  return acc;
+}
+function levelAverages(tree, mode){
+  const byDepth = collectByDepth(tree, 0, {});
+  return Object.keys(byDepth).map(depth => {
+    const list = byDepth[depth];
+    let avgCost = NaN;
+    if (mode.showCost) {
+      const withCount = list.filter(n => n[mode.countKey] > 0);
+      avgCost = withCount.length ? withCount.reduce((s, n) => s + costOfStage(n, mode.countKey), 0) / withCount.length : NaN;
+    }
+    const avgRate = list.length ? list.reduce((s, n) => s + rateOf(n, mode), 0) / list.length : 0;
+    return { avgCost, avgRate };
+  });
+}
+function deltaBadge(value, avg, higherIsBetter){
+  if (!isFinite(value) || !isFinite(avg) || avg === 0) return '<span class="delta neutral">sem base</span>';
+  const diff = ((value - avg) / avg) * 100;
+  const isGood = higherIsBetter ? diff >= 0 : diff <= 0;
+  const cls = Math.abs(diff) < 8 ? 'neutral' : (isGood ? 'good' : 'critical');
+  const arrow = diff >= 0 ? '▲' : '▼';
+  const sign = diff >= 0 ? '+' : '';
+  return `<span class="delta ${cls}">${arrow} ${sign}${diff.toFixed(0)}% vs média</span>`;
+}
+function rowFlag(mode, costDelta, rateDelta){
+  const basis = mode.flagBasis === 'cost' ? costDelta : rateDelta;
+  if (!isFinite(basis)) return 'neutro';
+  if (basis <= mode.goodThreshold) return 'investir';
+  if (basis >= mode.badThreshold) return 'cortar';
+  return 'observar';
+}
+
+// ============ Qualificação: árvore com MQL + SQL + Venda na mesma linha ============
+function renderFunnelTree(tree, tbodyId){
+  const tbody = document.getElementById(tbodyId);
+  tbody.innerHTML = '';
+  const avgsMql = levelAverages(tree, MQL_MODE);
+  const SQL_MODE = { countKey:'sql', showCost:true, higherIsBetterRate:true };
+  const byDepth = collectByDepth(tree, 0, {});
+  const avgsSql = Object.keys(byDepth).map(depth => {
+    const list = byDepth[depth];
+    const withSql = list.filter(n => n.sql > 0);
+    const avgCost = withSql.length ? withSql.reduce((s, n) => s + costOfStage(n, 'sql'), 0) / withSql.length : NaN;
+    const avgRate = list.length ? list.reduce((s, n) => s + (n.leads > 0 ? (n.sql / n.leads) * 100 : 0), 0) / list.length : 0;
+    return { avgCost, avgRate };
+  });
+
+  function renderNode(node, depth, parentId){
+    const tr = document.createElement('tr');
+    tr.id = `${tbodyId}-${node.id}`;
+    tr.dataset.level = depth;
+    if (parentId) tr.dataset.parent = parentId;
+    if (depth > 0) tr.classList.add('lvl-hidden');
+    tr.dataset.open = 'false';
+
+    const mqlCost = costOfStage(node, 'mql');
+    const mqlRate = node.leads > 0 ? (node.mql / node.leads) * 100 : 0;
+    const avgMql = avgsMql[depth] || { avgCost: NaN, avgRate: 0 };
+    const mqlCostDelta = isFinite(mqlCost) && isFinite(avgMql.avgCost) && avgMql.avgCost !== 0 ? ((mqlCost - avgMql.avgCost) / avgMql.avgCost) * 100 : NaN;
+    const flag = rowFlag(MQL_MODE, mqlCostDelta, NaN);
+    const hasChildren = !!(node.children && node.children.length);
+
+    const sqlCost = costOfStage(node, 'sql');
+    const sqlRate = node.leads > 0 ? (node.sql / node.leads) * 100 : 0;
+    const avgSql = avgsSql[depth] || { avgCost: NaN, avgRate: 0 };
+
+    const nameCell = document.createElement('td');
+    const wrap = document.createElement('div');
+    wrap.className = 'name-cell';
+    wrap.style.paddingLeft = (depth * 20) + 'px';
+    wrap.innerHTML = `<span class="row-flag ${flag}"></span>` +
+      (hasChildren ? `<button class="toggle" type="button" aria-label="Expandir">▸</button>` : `<span class="toggle-spacer"></span>`) +
+      `<span class="entity-name">${node.name}</span>`;
+    nameCell.appendChild(wrap);
+    tr.appendChild(nameCell);
+
+    const cells = [
+      ['num', fmtMoney(node.invest)],
+      ['num', fmtInt(node.leads)],
+    ];
+    cells.forEach(([cls, text]) => { const td = document.createElement('td'); td.className = cls; td.textContent = text; tr.appendChild(td); });
+
+    const tdMqlCount = document.createElement('td'); tdMqlCount.className = 'num grp-mql'; tdMqlCount.textContent = fmtInt(node.mql); tr.appendChild(tdMqlCount);
+    const tdMqlCost = document.createElement('td'); tdMqlCost.className = 'num';
+    tdMqlCost.innerHTML = `<div class="metric-stack"><span class="metric-value">${isFinite(mqlCost) ? fmtMoney(mqlCost) : '—'}</span>${deltaBadge(mqlCost, avgMql.avgCost, false)}</div>`;
+    tr.appendChild(tdMqlCost);
+    const tdMqlRate = document.createElement('td'); tdMqlRate.className = 'num';
+    tdMqlRate.innerHTML = `<div class="rate-cell"><div class="rate-top"><span class="metric-value">${fmtPct(mqlRate)}</span>${deltaBadge(mqlRate, avgMql.avgRate, true)}</div><div class="rate-track"><div class="rate-fill" style="width:${Math.min(100, mqlRate*2)}%"></div></div></div>`;
+    tr.appendChild(tdMqlRate);
+
+    const tdSqlCount = document.createElement('td'); tdSqlCount.className = 'num grp-sql'; tdSqlCount.textContent = fmtInt(node.sql); tr.appendChild(tdSqlCount);
+    const tdSqlCost = document.createElement('td'); tdSqlCost.className = 'num';
+    tdSqlCost.innerHTML = `<div class="metric-stack"><span class="metric-value">${isFinite(sqlCost) ? fmtMoney(sqlCost) : '—'}</span>${deltaBadge(sqlCost, avgSql.avgCost, false)}</div>`;
+    tr.appendChild(tdSqlCost);
+    const tdSqlRate = document.createElement('td'); tdSqlRate.className = 'num';
+    tdSqlRate.innerHTML = `<div class="rate-cell"><div class="rate-top"><span class="metric-value">${fmtPct(sqlRate)}</span>${deltaBadge(sqlRate, avgSql.avgRate, true)}</div><div class="rate-track"><div class="rate-fill sql" style="width:${Math.min(100, sqlRate*4)}%"></div></div></div>`;
+    tr.appendChild(tdSqlRate);
+
+    const tdVenda = document.createElement('td'); tdVenda.className = 'num grp-venda'; tdVenda.textContent = fmtInt(node.venda); tr.appendChild(tdVenda);
+
+    tbody.appendChild(tr);
+    if (hasChildren) node.children.forEach(child => renderNode(child, depth + 1, tr.id));
+  }
+  tree.forEach(node => renderNode(node, 0, null));
+}
+
+function renderFlatKeywords(list, tbodyId){
+  const tbody = document.getElementById(tbodyId);
+  tbody.innerHTML = '';
+  const withMql = list.filter(n => n.mql > 0);
+  const avgCost = withMql.length ? withMql.reduce((s, n) => s + costOfStage(n, 'mql'), 0) / withMql.length : NaN;
+  const avgRate = list.length ? list.reduce((s, n) => s + rateOf(n, MQL_MODE), 0) / list.length : 0;
+
+  list.forEach(node => {
+    const cost = costOfStage(node, 'mql');
+    const rate = rateOf(node, MQL_MODE);
+    const costDelta = isFinite(cost) && isFinite(avgCost) && avgCost !== 0 ? ((cost - avgCost) / avgCost) * 100 : NaN;
+    const flag = rowFlag(MQL_MODE, costDelta, NaN);
+    const sqlRate = node.leads > 0 ? (node.sql / node.leads) * 100 : 0;
+
+    const tr = document.createElement('tr');
+    tr.innerHTML =
+      `<td><div class="name-cell"><span class="row-flag ${flag}"></span><span class="toggle-spacer"></span><span class="entity-name">${node.name}</span></div></td>` +
+      `<td class="num">${fmtMoney(node.invest)}</td>` +
+      `<td class="num">${node.leads}</td>` +
+      `<td class="num grp-mql">${node.mql}</td>` +
+      `<td class="num"><div class="metric-stack"><span class="metric-value">${isFinite(cost) ? fmtMoney(cost) : '—'}</span>${deltaBadge(cost, avgCost, false)}</div></td>` +
+      `<td class="num"><div class="rate-cell"><div class="rate-top"><span class="metric-value">${fmtPct(rate)}</span>${deltaBadge(rate, avgRate, true)}</div><div class="rate-track"><div class="rate-fill" style="width:${Math.min(100,rate*2)}%"></div></div></div></td>` +
+      `<td class="num grp-sql">${node.sql}</td>` +
+      `<td class="num">${fmtPct(sqlRate)}</td>` +
+      `<td class="num grp-venda">${node.venda}</td>`;
+    tbody.appendChild(tr);
+  });
+}
+
+function renderLossReasons(list, tbodyId, clickable){
+  const tbody = document.getElementById(tbodyId);
+  tbody.innerHTML = '';
+  const total = list.reduce((s, r) => s + r.qty, 0);
+  [...list].sort((a, b) => b.qty - a.qty).forEach(r => {
+    const pct = total ? (r.qty / total) * 100 : 0;
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td><span class="entity-name">${r.name}</span></td><td class="num">${fmtInt(r.qty)}</td>` +
+      `<td class="num"><div class="rate-cell"><div class="rate-top"><span class="metric-value">${fmtPct(pct)}</span></div><div class="rate-track"><div class="rate-fill" style="width:${pct}%"></div></div></div></td>`;
+    if (clickable) {
+      tr.classList.add('reason-row');
+      tr.dataset.reason = r.name;
+      if (r.name === ACTIVE_LOST_REASON) tr.classList.add('active');
+      tr.addEventListener('click', () => setReasonFilter(r.name));
+    }
+    tbody.appendChild(tr);
+  });
+}
+
+function renderTree(tree, tbodyId, mode){
+  const tbody = document.getElementById(tbodyId);
+  tbody.innerHTML = '';
+  const avgs = levelAverages(tree, mode);
+  const maxRate = Math.max(...tree.map(n => rateOf(n, mode)), 1);
+  function renderNode(node, depth, parentId){
+    const tr = document.createElement('tr');
+    tr.id = `${tbodyId}-${node.id}`;
+    tr.dataset.level = depth;
+    if (parentId) tr.dataset.parent = parentId;
+    if (depth > 0) tr.classList.add('lvl-hidden');
+    tr.dataset.open = 'false';
+    const count = countOf(node, mode);
+    const rate = rateOf(node, mode);
+    const avg = avgs[depth] || { avgCost: NaN, avgRate: 0 };
+    const rateDelta = isFinite(avg.avgRate) && avg.avgRate !== 0 ? ((rate - avg.avgRate) / avg.avgRate) * 100 : NaN;
+    const flag = rowFlag(mode, NaN, rateDelta);
+    const hasChildren = !!(node.children && node.children.length);
+    const nameCell = document.createElement('td');
+    const wrap = document.createElement('div');
+    wrap.className = 'name-cell';
+    wrap.style.paddingLeft = (depth * 22) + 'px';
+    wrap.innerHTML = `<span class="row-flag ${flag}"></span>` + (hasChildren ? `<button class="toggle" type="button" aria-label="Expandir">▸</button>` : `<span class="toggle-spacer"></span>`) + `<span class="entity-name">${node.name}</span>`;
+    nameCell.appendChild(wrap);
+    tr.appendChild(nameCell);
+    const tdInvest = document.createElement('td'); tdInvest.className = 'num'; tdInvest.textContent = fmtMoney(node.invest); tr.appendChild(tdInvest);
+    const tdLeads = document.createElement('td'); tdLeads.className = 'num'; tdLeads.textContent = node.leads; tr.appendChild(tdLeads);
+    const tdCount = document.createElement('td'); tdCount.className = 'num'; tdCount.textContent = count; tr.appendChild(tdCount);
+    const tdRate = document.createElement('td'); tdRate.className = 'num';
+    const barWidth = Math.min(100, (rate / maxRate) * 100);
+    const fillClass = mode.higherIsBetterRate ? '' : (rate > avg.avgRate ? 'warn' : '');
+    tdRate.innerHTML = `<div class="rate-cell"><div class="rate-top"><span class="metric-value">${fmtPct(rate)}</span>${deltaBadge(rate, avg.avgRate, mode.higherIsBetterRate)}</div><div class="rate-track"><div class="rate-fill ${fillClass}" style="width:${barWidth}%"></div></div></div>`;
+    tr.appendChild(tdRate);
+    tbody.appendChild(tr);
+    if (hasChildren) node.children.forEach(child => renderNode(child, depth + 1, tr.id));
+  }
+  tree.forEach(node => renderNode(node, 0, null));
+}
+
+function renderMixTree(tree, tbodyId){
+  const tbody = document.getElementById(tbodyId);
+  tbody.innerHTML = '';
+  function renderNode(node, depth, parentId){
+    const tr = document.createElement('tr');
+    tr.id = `${tbodyId}-${node.id}`;
+    tr.dataset.level = depth;
+    if (parentId) tr.dataset.parent = parentId;
+    if (depth > 0) tr.classList.add('lvl-hidden');
+    tr.dataset.open = 'false';
+    const qual = node.mql, desq = node.lost, aberto = Math.max(0, node.leads - node.mql - node.lost);
+    const qualPct = node.leads > 0 ? (qual / node.leads) * 100 : 0;
+    const desqPct = node.leads > 0 ? (desq / node.leads) * 100 : 0;
+    const abertoPct = node.leads > 0 ? (aberto / node.leads) * 100 : 0;
+    const hasChildren = !!(node.children && node.children.length);
+    const nameCell = document.createElement('td');
+    const wrap = document.createElement('div');
+    wrap.className = 'name-cell';
+    wrap.style.paddingLeft = (depth * 22) + 'px';
+    wrap.innerHTML = (hasChildren ? `<button class="toggle" type="button" aria-label="Expandir">▸</button>` : `<span class="toggle-spacer"></span>`) + `<span class="entity-name">${node.name}</span>`;
+    nameCell.appendChild(wrap);
+    tr.appendChild(nameCell);
+    const tdInvest = document.createElement('td'); tdInvest.className = 'num'; tdInvest.textContent = fmtMoney(node.invest); tr.appendChild(tdInvest);
+    const tdLeads = document.createElement('td'); tdLeads.className = 'num'; tdLeads.textContent = node.leads; tr.appendChild(tdLeads);
+    const tdMix = document.createElement('td');
+    tdMix.innerHTML = `<div class="mix-cell"><div class="mix-track"><div class="mix-seg seg-qual" style="width:${qualPct}%"></div><div class="mix-seg seg-desq" style="width:${desqPct}%"></div><div class="mix-seg seg-aberto" style="width:${abertoPct}%"></div></div>` +
+      `<div class="mix-legend"><span class="mix-item"><i class="dot qual"></i>${qual} qualif. (${fmtPct(qualPct)})</span><span class="mix-item"><i class="dot desq"></i>${desq} desq. (${fmtPct(desqPct)})</span><span class="mix-item"><i class="dot aberto"></i>${aberto} aberto (${fmtPct(abertoPct)})</span></div></div>`;
+    tr.appendChild(tdMix);
+    tbody.appendChild(tr);
+    if (hasChildren) node.children.forEach(child => renderNode(child, depth + 1, tr.id));
+  }
+  tree.forEach(node => renderNode(node, 0, null));
+}
+
+renderFunnelTree(META_TREE, 'meta-tbody-mql');
+renderFunnelTree(GOOGLE_TREE, 'google-tbody-mql');
+renderFlatKeywords(GOOGLE_KEYWORDS, 'google-kw-tbody');
+renderLossReasons(QUALIFIED_LOST_REASONS, 'qualified-lost-tbody', false);
+renderTree(META_TREE, 'meta-tbody-lost', LOST_MODE);
+renderTree(GOOGLE_TREE, 'google-tbody-lost', LOST_MODE);
+renderLossReasons(LOSS_REASONS, 'loss-reason-tbody', true);
+renderMixTree(META_TREE, 'meta-tbody-geral');
+renderMixTree(GOOGLE_TREE, 'google-tbody-geral');
+
+// Plataforma sem veiculação no período: mostra o estado vazio em vez de uma tabela muda.
+function marcarVazias(){
+  document.querySelectorAll('tbody').forEach(t => {
+    if (t.children.length) return;
+    const cols = t.closest('table').querySelectorAll('thead th').length;
+    t.innerHTML = `<tr><td colspan="${cols}" style="color:var(--ink-muted)">Sem dados nesta plataforma no período.</td></tr>`;
+  });
+}
+
+// ============ Ordenação (crescente/decrescente por Investimento, Custo/MQL, etc.) ============
+// Reordena só entre irmãos do mesmo nível — preserva a hierarquia da árvore, nunca achata.
+function getSortValue(node, key, mode){
+  if (key === 'invest') return node.invest;
+  if (key === 'leads') return node.leads;
+  if (key === 'cost') { const c = costOfStage(node, 'mql'); return isFinite(c) ? c : Infinity; }
+  if (key === 'rate') return mode ? rateOf(node, mode) : 0;
+  if (key === 'costSql') { const c = costOfStage(node, 'sql'); return isFinite(c) ? c : Infinity; }
+  if (key === 'sql') return node.sql;
+  if (key === 'venda') return node.venda;
+  return 0;
+}
+function sortNodesRecursive(nodes, key, mode, dir){
+  const sorted = [...nodes].sort((a, b) => {
+    const va = getSortValue(a, key, mode), vb = getSortValue(b, key, mode);
+    if (va === vb) return 0;
+    if (va === Infinity) return 1;   // sem custo/MQL válido sempre no fim, nas duas direções
+    if (vb === Infinity) return -1;
+    return (va - vb) * dir;
+  });
+  return sorted.map(n => n.children ? { ...n, children: sortNodesRecursive(n.children, key, mode, dir) } : n);
+}
+
+const SORT_REGISTRY = {
+  'meta-tbody-mql':   { kind:'funnel', tree: META_TREE,   mode: MQL_MODE,
+    options:[['invest','Investimento'],['cost','Custo / MQL'],['rate','Taxa de MQL'],['costSql','Custo / {{ROTULO_SQL}}'],['sql','{{ROTULO_SQL}}'],['venda','{{ROTULO_VENDA}}'],['leads','Leads']] },
+  'google-tbody-mql': { kind:'funnel', tree: GOOGLE_TREE, mode: MQL_MODE,
+    options:[['invest','Investimento'],['cost','Custo / MQL'],['rate','Taxa de MQL'],['costSql','Custo / {{ROTULO_SQL}}'],['sql','{{ROTULO_SQL}}'],['venda','{{ROTULO_VENDA}}'],['leads','Leads']] },
+  'meta-tbody-lost':   { kind:'tree', tree: META_TREE,   mode: LOST_MODE,
+    options:[['invest','Investimento'],['rate','Taxa de Desqualificação'],['leads','Leads']] },
+  'google-tbody-lost': { kind:'tree', tree: GOOGLE_TREE, mode: LOST_MODE,
+    options:[['invest','Investimento'],['rate','Taxa de Desqualificação'],['leads','Leads']] },
+  'meta-tbody-geral':   { kind:'mix', tree: META_TREE,
+    options:[['invest','Investimento'],['leads','Leads']] },
+  'google-tbody-geral': { kind:'mix', tree: GOOGLE_TREE,
+    options:[['invest','Investimento'],['leads','Leads']] },
+  'google-kw-tbody': { kind:'flat', list: GOOGLE_KEYWORDS, mode: MQL_MODE,
+    options:[['invest','Investimento'],['cost','Custo / MQL'],['rate','Taxa de MQL'],['costSql','Custo / {{ROTULO_SQL}}'],['sql','{{ROTULO_SQL}}'],['venda','{{ROTULO_VENDA}}'],['leads','Leads']] },
+};
+const SORT_STATE = {};
+
+function applySort(tbodyId){
+  const cfg = SORT_REGISTRY[tbodyId];
+  if (!cfg) return;
+  const state = SORT_STATE[tbodyId] || { key: null, dir: -1 };
+  if (cfg.kind === 'funnel') {
+    renderFunnelTree(state.key ? sortNodesRecursive(cfg.tree, state.key, cfg.mode, state.dir) : cfg.tree, tbodyId);
+  } else if (cfg.kind === 'tree') {
+    const tree = state.key ? sortNodesRecursive(cfg.tree, state.key, cfg.mode, state.dir) : cfg.tree;
+    renderTree(tree, tbodyId, cfg.mode);
+  } else if (cfg.kind === 'mix') {
+    const tree = state.key ? sortNodesRecursive(cfg.tree, state.key, null, state.dir) : cfg.tree;
+    renderMixTree(tree, tbodyId);
+  } else if (cfg.kind === 'flat') {
+    const list = state.key
+      ? [...cfg.list].sort((a, b) => {
+          const va = getSortValue(a, state.key, cfg.mode), vb = getSortValue(b, state.key, cfg.mode);
+          if (va === vb) return 0;
+          if (va === Infinity) return 1;
+          if (vb === Infinity) return -1;
+          return (va - vb) * state.dir;
+        })
+      : cfg.list;
+    renderFlatKeywords(list, tbodyId);
+  }
+  marcarVazias();
+}
+
+document.querySelectorAll('.sort-bar[data-for]').forEach(bar => {
+  const tbodyId = bar.dataset.for;
+  const cfg = SORT_REGISTRY[tbodyId];
+  if (!cfg) return;
+  SORT_STATE[tbodyId] = { key: null, dir: -1 };
+
+  const label = document.createElement('span');
+  label.textContent = 'Ordenar por';
+  const select = document.createElement('select');
+  select.setAttribute('aria-label', 'Ordenar por');
+  const optNone = document.createElement('option');
+  optNone.value = ''; optNone.textContent = 'Ordem original';
+  select.appendChild(optNone);
+  cfg.options.forEach(([val, optLabel]) => {
+    const opt = document.createElement('option');
+    opt.value = val; opt.textContent = optLabel;
+    select.appendChild(opt);
+  });
+
+  const dirBtn = document.createElement('button');
+  dirBtn.type = 'button';
+  dirBtn.textContent = '↓ Decrescente';
+  dirBtn.disabled = true;
+
+  select.addEventListener('change', () => {
+    SORT_STATE[tbodyId].key = select.value || null;
+    dirBtn.disabled = !select.value;
+    applySort(tbodyId);
+  });
+  dirBtn.addEventListener('click', () => {
+    const st = SORT_STATE[tbodyId];
+    st.dir = st.dir === -1 ? 1 : -1;
+    dirBtn.textContent = st.dir === -1 ? '↓ Decrescente' : '↑ Crescente';
+    applySort(tbodyId);
+  });
+
+  bar.appendChild(label);
+  bar.appendChild(select);
+  bar.appendChild(dirBtn);
+});
+
+
+document.querySelectorAll('tbody').forEach(tbody => {
+  tbody.addEventListener('click', e => {
+    const btn = e.target.closest('.toggle');
+    if (!btn) return;
+    const tr = btn.closest('tr');
+    const isOpen = tr.dataset.open === 'true';
+    if (isOpen) {
+      const hideDescendants = id => {
+        tbody.querySelectorAll(`tr[data-parent="${id}"]`).forEach(child => { child.classList.add('lvl-hidden'); child.dataset.open = 'false'; hideDescendants(child.id); });
+      };
+      hideDescendants(tr.id);
+      tr.dataset.open = 'false';
+    } else {
+      tbody.querySelectorAll(`tr[data-parent="${tr.id}"]`).forEach(child => child.classList.remove('lvl-hidden'));
+      tr.dataset.open = 'true';
+    }
+  });
+});
+
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(`panel-${btn.dataset.tab}`).classList.add('active');
+  });
+});
+
+function sumTop(tree, key){ return tree.reduce((s, n) => s + n[key], 0); }
+const totalInvest = sumTop(META_TREE, 'invest') + sumTop(GOOGLE_TREE, 'invest');
+const totalLeads = sumTop(META_TREE, 'leads') + sumTop(GOOGLE_TREE, 'leads');
+const totalMql = sumTop(META_TREE, 'mql') + sumTop(GOOGLE_TREE, 'mql');
+const totalSql = sumTop(META_TREE, 'sql') + sumTop(GOOGLE_TREE, 'sql');
+const totalVenda = sumTop(META_TREE, 'venda') + sumTop(GOOGLE_TREE, 'venda');
+const totalLost = sumTop(META_TREE, 'lost') + sumTop(GOOGLE_TREE, 'lost');
+
+document.getElementById('kpi-invest').textContent = fmtMoney(totalInvest);
+document.getElementById('kpi-leads').textContent = fmtInt(totalLeads);
+document.getElementById('kpi-mql').textContent = fmtInt(totalMql);
+document.getElementById('kpi-rate-mql').textContent = fmtPct(pct(totalMql, totalLeads)) + ' dos leads';
+document.getElementById('kpi-cost-mql').textContent = totalMql > 0 ? fmtMoney(totalInvest/totalMql) : '—';
+document.getElementById('kpi-sql').textContent = fmtInt(totalSql);
+document.getElementById('kpi-rate-sql').textContent = fmtPct(pct(totalSql, totalLeads)) + ' dos leads';
+document.getElementById('kpi-cost-sql').textContent = totalSql > 0 ? fmtMoney(totalInvest/totalSql) : '—';
+document.getElementById('kpi-venda').textContent = fmtInt(totalVenda);
+document.getElementById('kpi-rate-venda').textContent = fmtPct(pct(totalVenda, totalLeads)) + ' dos leads';
+document.getElementById('kpi-cost-venda').textContent = totalVenda > 0 ? fmtMoney(totalInvest/totalVenda) : '—';
+
+document.getElementById('kpi-leads-lost').textContent = fmtInt(totalLeads);
+document.getElementById('kpi-lost').textContent = fmtInt(totalLost);
+document.getElementById('kpi-rate-lost').textContent = fmtPct(pct(totalLost, totalLeads));
+const topReason = [...LOSS_REASONS].sort((a,b)=>b.qty-a.qty)[0];
+document.getElementById('kpi-top-reason').textContent = topReason ? `${topReason.name} — ${fmtPct(pct(topReason.qty, totalLost))}` : 'Nenhum perdido sem qualificar';
+
+const totalOpen = totalLeads - totalMql - totalLost;
+document.getElementById('kpi-g-invest').textContent = fmtMoney(totalInvest);
+document.getElementById('kpi-g-leads').textContent = fmtInt(totalLeads);
+document.getElementById('kpi-g-qual').textContent = fmtInt(totalMql);
+document.getElementById('kpi-g-qual-rate').textContent = fmtPct(pct(totalMql, totalLeads)) + ' do total';
+document.getElementById('kpi-g-desq').textContent = fmtInt(totalLost);
+document.getElementById('kpi-g-desq-rate').textContent = fmtPct(pct(totalLost, totalLeads)) + ' do total';
+document.getElementById('kpi-g-aberto').textContent = fmtInt(totalOpen);
+document.getElementById('kpi-g-aberto-rate').textContent = fmtPct(pct(totalOpen, totalLeads)) + ' do total';
+
+const shortName = s => s.replace(/^(\[[^\]]*\]\s*)+/, '');
+function flattenAll(tree, platform, levelLabels, depth, acc, parent){
+  tree.forEach(node => {
+    acc.push({ name: node.name, platform, level: levelLabels[depth] + (parent ? ' · ' + parent : ''), invest: node.invest, leads: node.leads, mql: node.mql, lost: node.lost });
+    if (node.children) flattenAll(node.children, platform, levelLabels, depth + 1, acc, (parent ? parent + ' › ' : '') + shortName(node.name));
+  });
+  return acc;
+}
+const allNodes = [
+  ...flattenAll(META_TREE, 'Meta', ['Campanha', 'Público', 'Anúncio'], 0, []),
+  ...flattenAll(GOOGLE_TREE, 'Google', ['Campanha', 'Grupo de Anúncios', 'Anúncio'], 0, []),
+  ...GOOGLE_KEYWORDS.map(k => ({ name: k.name, platform: 'Google', level: 'Palavra-chave', invest: k.invest, leads: k.leads, mql: k.mql, lost: k.lost })),
+];
+
+const mqlRanked = allNodes.filter(n => n.mql >= 3 && n.invest > 0).map(n => ({ ...n, cost: costOfStage(n, 'mql') })).sort((a, b) => a.cost - b.cost);
+function renderDecisionList(items, elId, metricFn){
+  document.getElementById(elId).innerHTML = items.map(n => `<li><span class="name">${n.name}<span class="where">${n.platform} · ${n.level}</span></span><span class="metric">${metricFn(n)}</span></li>`).join('');
+}
+renderDecisionList(mqlRanked.slice(0, 3), 'invest-more-list', n => `${fmtMoney(n.cost)} / MQL`);
+renderDecisionList(mqlRanked.slice(3).slice(-3).reverse(), 'invest-less-list', n => `${fmtMoney(n.cost)} / MQL`);
+
+const lostRanked = allNodes.filter(n => n.leads >= 8).map(n => ({ ...n, rate: (n.lost / n.leads) * 100 })).sort((a, b) => a.rate - b.rate);
+renderDecisionList(lostRanked.slice(0, 3), 'lost-best-list', n => fmtPct(n.rate));
+renderDecisionList(lostRanked.slice(3).slice(-3).reverse(), 'lost-worst-list', n => fmtPct(n.rate));
+
+const openRanked = allNodes.filter(n => n.leads >= 8).map(n => ({ ...n, rate: (Math.max(0, n.leads - n.mql - n.lost) / n.leads) * 100 })).sort((a, b) => b.rate - a.rate);
+renderDecisionList(openRanked.slice(0, 3), 'open-worst-list', n => fmtPct(n.rate));
+
+function setReasonFilter(reason){
+  ACTIVE_LOST_REASON = (ACTIVE_LOST_REASON === reason) ? null : reason;
+  document.querySelectorAll('#loss-reason-tbody tr').forEach(tr => tr.classList.toggle('active', tr.dataset.reason === ACTIVE_LOST_REASON));
+  const chip = document.getElementById('reason-filter-chip');
+  chip.innerHTML = ACTIVE_LOST_REASON ? `<span class="filter-chip">Mostrando: ${ACTIVE_LOST_REASON}<button type="button" aria-label="Limpar filtro">✕</button></span>` : '';
+  if (ACTIVE_LOST_REASON) chip.querySelector('button').addEventListener('click', () => setReasonFilter(ACTIVE_LOST_REASON));
+  applySort('meta-tbody-lost');
+  applySort('google-tbody-lost');
+}
+
+marcarVazias();
+document.documentElement.dataset.renderOk = '1';
+</script>
+</body>
+</html>

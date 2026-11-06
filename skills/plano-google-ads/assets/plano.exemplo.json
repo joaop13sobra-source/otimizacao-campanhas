@@ -1,0 +1,541 @@
+{
+ "data": "20/10/2026",
+ "conversao_rotulo": "ação de conversão \"Lead\"",
+ "cabecalho": {
+  "titulo": "Plano para reduzir o CPL do Google Ads",
+  "titulo_aba": "Plano Google Ads NetExemplo",
+  "subtitulo": "NetExemplo (dados sintéticos de demonstração) · base: Google Ads de {{meta.periodo}}, planilha de leads e relatório de vendas do CRM · documento interno",
+  "rodape": "Dados sintéticos de demonstração"
+ },
+ "rotulos_campanha": {
+  "Institucional": "Institucional (marca)",
+  "Campanha Core": "Campanha Core (genéricos)"
+ },
+ "resumo": {
+  "callouts": [
+   {
+    "tipo": "warn",
+    "titulo": "Negativar termos sozinho resolve pouco: {{negativas.cenarios.tier1.var_pct|pct}} no Tier 1 e {{negativas.cenarios.tier1_mais_concorrentes.var_pct|pct}} com os concorrentes.",
+    "texto": "O efeito é calculado supondo que a verba liberada rende o CPL médio do que sobra. Negativas entram como higiene, não como a alavanca principal."
+   },
+   {
+    "tipo": "",
+    "titulo": "O CPL não é um bom guia de corte.",
+    "texto": "Cruzando as vendas do CRM com a planilha de leads ({{vendas.crm.vendas_achadas|n0}} das {{vendas.crm.vendas|n0}} vendas rastreadas), o custo por venda varia por palavra-chave e a ordem pode não seguir o CPL. Cortar o termo de CPL mais alto reduz o CPL, mas pode tirar venda."
+   }
+  ],
+  "alavancas": [
+   {
+    "nome": "1. Decidir por custo por venda, não por CPL",
+    "evidencia": "Taxa de venda por lead: marca {{vendas.segmentos.campanha[nome=Institucional].taxa|frac0}}, genéricos {{vendas.segmentos.campanha[nome=Campanha Core].taxa|frac0}}. Custo por venda estimado: marca {{vendas.segmentos.campanha[nome=Institucional].custo_venda|brl0}} e genéricos {{vendas.segmentos.campanha[nome=Campanha Core].custo_venda|brl0}}.",
+    "efeito": "Mantém o custo por venda; o CPL pode subir",
+    "confianca": "Média: poucas vendas por segmento"
+   },
+   {
+    "nome": "2. Entender a variação de conversão",
+    "evidencia": "Conversão por clique de {{decomposicao.cvr_ref|pct}} ({{referencia.rotulo}}) para {{kpis.cvr|pct}}. Marca {{campanhas[nome=Institucional].cvr|pct}}, genéricos {{campanhas[nome=Campanha Core].cvr|pct}}.",
+    "efeito": "Não quantificável sem o período anterior por campanha",
+    "confianca": "Baixa"
+   },
+   {
+    "nome": "3. Realocar verba de termos de CPL alto",
+    "evidencia": "Concorrentes custam {{temas[tema=Concorrentes].cpl|brl}} por lead e genéricos sem cidade {{temas[tema=Genérico sem cidade].cpl|brl}}. A planilha guarda a palavra-chave, não a pesquisa: a venda desses termos não é medida.",
+    "efeito": "A calcular com o custo por venda",
+    "confianca": "Baixa"
+   },
+   {
+    "nome": "4. Negativas",
+    "evidencia": "Tier 1 remove {{negativas.cenarios.tier1.remove_custo|brl0}} e dá CPL {{negativas.cenarios.tier1.cpl|brl}}; com concorrentes remove {{negativas.cenarios.tier1_mais_concorrentes.remove_custo|brl0}} e dá {{negativas.cenarios.tier1_mais_concorrentes.cpl|brl}}.",
+    "efeito": "{{negativas.cenarios.tier1.var_pct|pct}} a {{negativas.cenarios.tier1_mais_concorrentes.var_pct|pct}}",
+    "confianca": "Alta (baixo risco)"
+   },
+   {
+    "nome": "5. Estrutura e índice de qualidade",
+    "evidencia": "{{marca_fora_da_campanha_de_marca.pct_da_campanha|pct0}} da verba da campanha de genéricos vai para termos de marca. {{palavras_resumo.total|n0}} palavras-chave, {{palavras_resumo.amplas|n0}} em ampla.",
+    "efeito": "Não quantificável nos dados atuais",
+    "confianca": "Média"
+   }
+  ],
+  "nota_alavancas": "Os efeitos não se somam por completo. A decisão por custo por venda usa poucas vendas por segmento: é indicativa, não definitiva."
+ },
+ "diagnostico": {
+  "bullets": [
+   "A campanha de marca tem conversão por clique de {{campanhas[nome=Institucional].cvr|pct}} e perde {{campanhas[nome=Institucional].perd_orc|pct}} das impressões por orçamento.",
+   "A campanha de genéricos tem conversão por clique de {{campanhas[nome=Campanha Core].cvr|pct}}, CPC de {{campanhas[nome=Campanha Core].cpc|brl}} e perde {{campanhas[nome=Campanha Core].perd_orc|pct}} por orçamento e {{campanhas[nome=Campanha Core].perd_class|pct}} por classificação.",
+   "{{marca_fora_da_campanha_de_marca.pct_da_campanha|pct0}} do gasto da campanha de genéricos vai para termos de marca ({{marca_fora_da_campanha_de_marca.custo|brl0}}): deveriam estar na campanha de marca."
+  ],
+  "nota": "Comparação com o período anterior: {{referencia.fonte}}.",
+  "vendas_bullets": [
+   "O custo por venda difere entre marca e genéricos por causa de CPC e conversão por clique, e também da taxa de venda do lead ({{vendas.segmentos.campanha[nome=Institucional].taxa|frac0}} e {{vendas.segmentos.campanha[nome=Campanha Core].taxa|frac0}}).",
+   "O melhor anúncio muda de um grupo para outro (tabela acima): compare sempre dentro do mesmo grupo antes de decidir qual texto replicar.",
+   "O status da planilha de leads pode ter valor preditivo, mas não deve ser usado como corte sem checar quantas vendas vêm de leads marcados como inválidos."
+  ]
+ },
+ "termos": {
+  "exemplos_tema": {
+   "Marca pura": "\"netexemplo\", \"net exemplo\"",
+   "Marca + suporte/cliente": "boleto, 2ª via, suporte",
+   "Marca + contato (WhatsApp/telefone)": "\"netexemplo whatsapp\", \"numero da netexemplo\"",
+   "Marca + cidade/bairro": "\"netexemplo cidade alfa\"",
+   "Concorrentes / outras operadoras": "operadoras nacionais e locais",
+   "Genérico + cidade/bairro": "\"internet cidade alfa\"",
+   "Genérico sem cidade / outros": "\"internet residencial\", \"provedor de internet\", \"wifi\""
+  },
+  "bullets": [
+   "Marca + contato custa {{temas[tema=Marca + contato].cpl|brl}} por lead: é busca de quem quer falar com a empresa; proteja, não negative.",
+   "Concorrentes custam {{temas[tema=Concorrentes].cpl|brl}} por lead; {{concorrentes.sem_conversao|n0}} dos {{concorrentes.com_clique|n0}} termos desse tema que receberam clique não converteram.",
+   "Genéricos com cidade pagam CPC de {{temas[tema=Genérico + cidade].cpc|brl}} e convertem {{temas[tema=Genérico + cidade].cvr|pct0}} dos cliques."
+  ],
+  "mapa_cidades": {
+   "Cidade Alfa": "cidade alfa",
+   "Cidade Beta": "cidade beta",
+   "Cidade Gama": "cidade gama",
+   "Cidade Delta": "cidade delta"
+  },
+  "nota_cidades": "O CPL por cidade vem do texto da busca (aproximação). Leads e vendas vêm da planilha de leads, sem repetidos por telefone, cruzada com o CRM.",
+  "callouts_cidades": [
+   {
+    "tipo": "warn",
+    "titulo": "Antes de cortar uma cidade, olhe o custo por venda.",
+    "texto": "Cidade Delta: {{vendas.segmentos.cidade[nome=cidade delta].taxa|frac0}} dos leads viraram venda ({{vendas.segmentos.cidade[nome=cidade delta].vendas|n0}} de {{vendas.segmentos.cidade[nome=cidade delta].leads|n0}}). Se houver corte, é por bairro, confirmado com o cliente."
+   }
+  ]
+ },
+ "negativas": {
+  "cartoes": [
+   {
+    "conjunto": "suporte",
+    "tier": 1,
+    "titulo": "Marca + suporte",
+    "tags": [
+     "boleto",
+     "2 via",
+     "segunda via",
+     "fatura",
+     "suporte",
+     "login"
+    ],
+    "nota": "Não negativar WhatsApp/telefone de marca."
+   },
+   {
+    "conjunto": "concorrente_contato",
+    "tier": 1,
+    "titulo": "Concorrente + contato",
+    "nota": "Quem busca o telefone de outra operadora é cliente dela pedindo atendimento."
+   },
+   {
+    "conjunto": "fora_area",
+    "tier": 1,
+    "titulo": "Fora da área",
+    "tags": [
+     "cidade omega",
+     "cidade sigma"
+    ]
+   },
+   {
+    "conjunto": "concorrente",
+    "tier": 2,
+    "titulo": "Nomes de concorrentes",
+    "max": 10,
+    "tags": [
+     "vivo",
+     "claro",
+     "tim",
+     "oi fibra"
+    ],
+    "nota": "Há conversões: confirmar com o CRM antes de negativar."
+   }
+  ],
+  "onde": [
+   "Lista de negativas compartilhada, aplicada às campanhas atuais e às novas.",
+   "Negativa de marca exata nas campanhas que não são de marca.",
+   "Revisar a lista existente antes de cadastrar (ela não faz parte dos relatórios exportados)."
+  ]
+ },
+ "palavras_chave": {
+  "minimo_leads": 15,
+  "decisoes": {
+   "NetExemplo": {
+    "decisao": "Manter (motor da conta)",
+    "cor": "ok",
+    "porque": "Adicionar exata e frase, aplicar negativas de suporte e liberar orçamento se perder impressão por verba."
+   },
+   "Net Exemplo": {
+    "decisao": "Manter",
+    "cor": "ok",
+    "porque": "Variação de marca; unificar no grupo de marca."
+   },
+   "NetExemplo Internet": {
+    "decisao": "Pausar",
+    "cor": "bad",
+    "porque": "Redundante: coberta pela palavra de marca ampla."
+   },
+   "internet residencial": {
+    "decisao": "Manter, sem priorizar",
+    "cor": "warn",
+    "porque": "Comparar o CPL com o custo por venda antes de escalar. Migrar para frase."
+   },
+   "Internet Fibra Regional": {
+    "decisao": "Manter em frase",
+    "cor": "warn",
+    "porque": "Escopo largo (regional): migrar para frase e conferir o relatório de locais."
+   },
+   "Serviço Internet": {
+    "decisao": "Manter em frase",
+    "cor": "warn",
+    "porque": "Sem índice de qualidade atribuído: acompanhar o custo por venda antes de decidir e migrar para frase."
+   },
+   "Internet em casa": {
+    "decisao": "Pausar",
+    "cor": "bad",
+    "porque": "Gasto sem conversão e sem índice de qualidade."
+   },
+   "provedor de internet": {
+    "decisao": "Manter, corrigir",
+    "cor": "warn",
+    "porque": "Índice de qualidade baixo: reescrever os anúncios do grupo e testar frase com teto."
+   },
+   "internet cidade alfa": {
+    "decisao": "Mover para campanha Local",
+    "cor": "warn",
+    "porque": "CPC alto em ampla; só faz sentido em frase/exata com lance controlado."
+   },
+   "internet em cidade alfa": {
+    "decisao": "Mover para campanha Local",
+    "cor": "warn",
+    "porque": "Amostra de 1 clique; avaliar em exata na campanha Local."
+   },
+   "fibra óptica": {
+    "decisao": "Observar",
+    "cor": "warn",
+    "porque": "Poucos cliques: amostra pequena demais para decidir."
+   }
+  },
+  "nota": "Pausar palavras sem conversão economiza pouco; o que pesa são as grandes. Cada taxa de venda tem poucas vendas por trás: reavaliar em duas semanas."
+ },
+ "novas_palavras": {
+  "intro": "Descoberta no Semrush (banco Brasil) a partir das palavras que convertem e das cidades-alvo; concorrentes, suporte, informacional e fora de área removidos. Neste exemplo os volumes são sintéticos. Volumes reais são do Brasil inteiro; a parte local só aparece quando a cidade está no texto.",
+  "callouts": [
+   {
+    "tipo": "",
+    "titulo": "Compare a demanda de marca com a local.",
+    "texto": "Neste exemplo, a soma dos volumes das cidades-alvo é de ~{{semrush.grupo[titulo=Cidades-alvo].soma|n0}} buscas/mês e a da marca ~{{semrush.grupo[titulo=Demanda da marca].soma|n0}}. Se a demanda local for pequena, Search sozinho não absorve a verba: leve a decisão sobre outros canais ao check-in."
+   }
+  ],
+  "grupos": [
+   {
+    "titulo": "Demanda da marca",
+    "titulo_kpi": "Marca (busca/mês)",
+    "sub_kpi": "soma das variações de marca",
+    "palavras": [
+     "netexemplo",
+     "net exemplo",
+     "netexemplo internet",
+     "netexemplo whatsapp",
+     "netexemplo telefone",
+     "netexemplo cidade alfa",
+     "netexemplo cidade beta"
+    ],
+    "nota": "Termos de suporte (\"2 via\") devem virar negativa."
+   },
+   {
+    "titulo": "Cidades-alvo",
+    "titulo_kpi": "Cidades-alvo (busca/mês)",
+    "sub_kpi": "variações somadas (campanha Local)",
+    "palavras": [
+     "internet cidade alfa",
+     "internet em cidade alfa",
+     "internet fibra cidade alfa",
+     "internet disponivel em cidade alfa",
+     "provedor de internet cidade alfa",
+     "planos internet cidade alfa",
+     "internet banda larga cidade alfa",
+     "internet cidade beta",
+     "internet em cidade beta",
+     "internet fibra cidade beta",
+     "internet cidade gama",
+     "internet em cidade gama",
+     "provedor de internet cidade gama"
+    ],
+    "nota": "Volume abaixo de 20 buscas não é medido pelo Semrush. Cheque a cobertura de cada cidade no CRM antes de incluir."
+   },
+   {
+    "titulo": "Intenção alta, planos e produto",
+    "titulo_kpi": "Intenção alta (busca/mês)",
+    "sub_kpi": "Brasil inteiro; \"perto de mim\" é filtrado pela localização",
+    "palavras": [
+     "disponibilidade internet fibra",
+     "planos de internet residencial",
+     "plano de internet residencial",
+     "internet residencial barata",
+     "melhor internet residencial",
+     "planos de internet fibra",
+     "plano de internet fibra",
+     "internet residencial perto de mim",
+     "provedor de internet perto de mim",
+     "melhor provedor de internet",
+     "consultar disponibilidade internet",
+     "internet 600 mega",
+     "internet 1 giga"
+    ],
+    "nota": "CPC e concorrência são referências do Semrush para ordenar os termos, não o CPC real do leilão."
+   }
+  ]
+ },
+ "estrutura": {
+  "lead": "Quatro campanhas de Search com o mesmo orçamento total, para o CPL ser comparável. Os valores são ponto de partida, não verdade.",
+  "campanhas": [
+   {
+    "nome": "1. Marca",
+    "objetivo": "Capturar quem já procura a marca",
+    "resumo_grupos": "Marca pura · Marca + contato · Marca + cidade",
+    "correspondencia": "Exata e frase; negativas de suporte",
+    "orcamento_dia": "R$ 115",
+    "grupos": [
+     {
+      "nome": "Marca pura",
+      "palavras": [
+       "netexemplo",
+       "net exemplo",
+       "netexemplo internet",
+       "netexemplo planos"
+      ],
+      "obs": "Hoje em ampla; passar para exata e frase."
+     },
+     {
+      "nome": "Marca + contato",
+      "palavras": [
+       "netexemplo whatsapp",
+       "netexemplo telefone",
+       "numero da netexemplo"
+      ],
+      "obs": "Busca de quem quer falar com a empresa: proteger, não negativar."
+     },
+     {
+      "nome": "Marca + cidade",
+      "palavras": [
+       "netexemplo cidade alfa",
+       "netexemplo cidade beta",
+       "netexemplo cidade gama"
+      ],
+      "obs": "O Semrush costuma subestimar termo de marca local: confira o desempenho na conta."
+     }
+    ]
+   },
+   {
+    "nome": "2. Local",
+    "objetivo": "Quem busca provedor nas cidades atendidas",
+    "resumo_grupos": "Um grupo por cidade, com anúncio e página da cidade",
+    "correspondencia": "Frase (exata nos de 100+ buscas)",
+    "orcamento_dia": "R$ 30",
+    "grupos": [
+     {
+      "nome": "Cidade Alfa",
+      "palavras": [
+       "internet cidade alfa",
+       "internet em cidade alfa",
+       "internet fibra cidade alfa",
+       "internet disponivel em cidade alfa",
+       "provedor de internet cidade alfa",
+       "planos internet cidade alfa",
+       "internet banda larga cidade alfa"
+      ],
+      "obs": "Variações de baixo volume só valem juntas, em frase."
+     },
+     {
+      "nome": "Cidade Beta",
+      "palavras": [
+       "internet cidade beta",
+       "internet em cidade beta",
+       "internet fibra cidade beta"
+      ],
+      "obs": ""
+     },
+     {
+      "nome": "Cidade Gama",
+      "palavras": [
+       "internet cidade gama",
+       "internet em cidade gama",
+       "provedor de internet cidade gama"
+      ],
+      "obs": ""
+     }
+    ]
+   },
+   {
+    "nome": "3. Intenção alta (substitui a campanha de genéricos)",
+    "objetivo": "Quem compara ou checa disponibilidade",
+    "resumo_grupos": "Disponibilidade e \"perto de mim\" · Planos e preço · Produto · Genéricos que já rodam",
+    "correspondencia": "Frase e exata, sem ampla",
+    "orcamento_dia": "R$ 45",
+    "grupos": [
+     {
+      "nome": "Disponibilidade e \"perto de mim\"",
+      "palavras": [
+       "disponibilidade internet fibra",
+       "consultar disponibilidade internet",
+       "internet residencial perto de mim",
+       "provedor de internet perto de mim"
+      ],
+      "obs": "Intenção comercial/transacional. Exigem localização restrita e página com consulta de disponibilidade."
+     },
+     {
+      "nome": "Planos e preço",
+      "palavras": [
+       "planos de internet residencial",
+       "plano de internet residencial",
+       "internet residencial barata",
+       "melhor internet residencial",
+       "planos de internet fibra",
+       "plano de internet fibra"
+      ],
+      "obs": "Volume nacional alto, concorrência forte: começar em frase com lance controlado."
+     },
+     {
+      "nome": "Produto",
+      "palavras": [
+       "internet 1 giga",
+       "internet 600 mega"
+      ],
+      "obs": "Os planos que a empresa vende."
+     },
+     {
+      "nome": "Genéricos que já rodam (migrar de ampla para frase)",
+      "palavras": [
+       "internet residencial",
+       "provedor de internet",
+       "internet fibra regional",
+       "serviço internet"
+      ],
+      "obs": "Rever os anúncios antes de escalar."
+     }
+    ]
+   },
+   {
+    "nome": "4. Conquista (teste, só se o CRM mostrar venda)",
+    "objetivo": "Quem busca outra operadora",
+    "resumo_grupos": "Operadoras concorrentes",
+    "correspondencia": "Exata",
+    "orcamento_dia": "R$ 10 de teste",
+    "grupos": [
+     {
+      "nome": "Concorrentes",
+      "palavras": [
+       "vivo fibra",
+       "claro internet",
+       "tim fibra"
+      ],
+      "obs": "Só exata. Os volumes são nacionais e não refletem a área atendida."
+     }
+    ]
+   }
+  ],
+  "bullets": [
+   "<b>Geografia:</b> só presença nos municípios atendidos; exclusões por bairro a partir do CRM, confirmadas com o cliente.",
+   "<b>Lance:</b> começar manual (ou maximizar cliques com teto de CPC). Só ligar \"maximizar conversões\" com CPA alvo depois de validar a ação de conversão e com 30 ou mais conversões por mês na campanha.",
+   "<b>Anúncios:</b> pelo menos um anúncio responsivo por grupo, com a cidade no título, e os reprovados corrigidos antes de qualquer migração.",
+   "<b>Extensões:</b> links de site, chamada/WhatsApp, local e frases de destaque.",
+   "<b>Páginas:</b> uma LP por campanha, com \"consultar disponibilidade\" para o grupo de disponibilidade.",
+   "<b>Rotina:</b> termos de pesquisa toda semana, lista de negativas compartilhada e orçamento movido pelo menor custo por venda, não pelo menor CPL."
+  ],
+  "regras_palavras": [
+   "<b>Negativas por campanha:</b> a campanha de marca recebe as de suporte; as demais recebem a negativa de marca exata para a marca ficar só na campanha 1."
+  ],
+  "destinos": {
+   "Marca": {
+    "destino": "Vira a campanha Marca",
+    "cor": "ok",
+    "porque": "Já é campanha própria. Recebe os termos de marca que vazam para a de genéricos."
+   },
+   "Internet Fibra": {
+    "destino": "Migrar para Intenção alta",
+    "cor": "warn",
+    "porque": "Sai da ampla e vai para frase."
+   },
+   "Provedor de Internet": {
+    "destino": "Migrar para Intenção alta",
+    "cor": "warn",
+    "porque": "Vira grupo próprio, com anúncios reescritos e frase no lugar de ampla."
+   }
+  }
+ },
+ "checagens": [
+  "<b>Anúncios reprovados.</b> Exportar o relatório de anúncios (status de aprovação e política), corrigir e reenviar.",
+  "<b>Conversão por clique.</b> Foi de {{decomposicao.cvr_ref|pct}} para {{kpis.cvr|pct}}. Verificar se a LP ou o formulário mudou e o que dispara a ação de conversão.",
+  "<b>Leads sem registro comercial.</b> {{vendas.leads.sem_registro_crm|n0}} dos {{vendas.leads.unicos|n0}} telefones da planilha não aparecem no relatório do CRM. Pedir ao comercial para checar se foram contatados ou descartados.",
+  "<b>Locais.</b> Exportar o relatório de locais para ver de onde vêm os cliques de palavras com escopo largo.",
+  "<b>Estratégia de lances.</b> Não vem no export básico; confirmar a estratégia atual de cada campanha."
+ ],
+ "plano_teste": {
+  "etapas": [
+   {
+    "data": "Semana 0",
+    "titulo": "Checagens e higiene",
+    "itens": [
+     "Itens 1 a 3 das checagens.",
+     "Negativas Tier 1.",
+     "Pausar as palavras sem conversão."
+    ]
+   },
+   {
+    "data": "Check-in",
+    "titulo": "Decisões com o cliente",
+    "itens": [
+     "Cobertura por bairro com o comercial.",
+     "Outros canais além de Search.",
+     "Verba oficial do mês."
+    ]
+   },
+   {
+    "data": "Semana 1",
+    "titulo": "Nova estrutura",
+    "itens": [
+     "Criar Local e Intenção alta; migrar a marca para a campanha de marca.",
+     "Negativas de marca nas demais.",
+     "Orçamento total mantido, sem mexer em lance na 1ª semana."
+    ]
+   },
+   {
+    "data": "Semana 3",
+    "titulo": "Leitura de 14 dias",
+    "itens": [
+     "Cruzar leads com vendas do CRM por campanha.",
+     "Tier 2 de negativas.",
+     "Mover verba para o menor custo por venda."
+    ]
+   }
+  ],
+  "metas": [
+   {
+    "indicador": "CPL (Google Ads)",
+    "hoje": "{{kpis.cpl|brl}}",
+    "meta": "melhorar o quanto os cenários calculados sustentam; nada além disso",
+    "trava": "não subir além do valor de hoje"
+   },
+   {
+    "indicador": "Custo por venda",
+    "hoje": "{{vendas.segmentos.campanha[nome=Institucional].custo_venda|brl0}} (marca)",
+    "meta": "manter ou reduzir",
+    "trava": "não passar de +10% do atual"
+   },
+   {
+    "indicador": "Leads por dia",
+    "hoje": "-",
+    "meta": "manter",
+    "trava": "não cair abaixo de 85% do atual"
+   },
+   {
+    "indicador": "Anúncios aprovados",
+    "hoje": "maioria reprovada",
+    "meta": "100% aprovados",
+    "trava": "-"
+   }
+  ]
+ },
+ "limites": [
+  "Só há o período exportado: sem o período anterior por campanha e por termo, a explicação da variação do CPL é inferida.",
+  "A planilha de leads guarda a palavra-chave (utm_term), não o termo pesquisado: a venda por termo de pesquisa não é medida.",
+  "Faltam: relatório de anúncios, negativas atuais, relatório de locais, estratégia de lances e histórico de alterações.",
+  "Os dados deste exemplo são sintéticos e os volumes do Semrush foram inventados para demonstração."
+ ]
+}

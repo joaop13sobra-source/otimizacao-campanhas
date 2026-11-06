@@ -1,0 +1,152 @@
+{
+ "cliente": "NetExemplo",
+ "periodo": {
+  "rotulo": "01 a 19/10/2026",
+  "inicio": "2026-10-01",
+  "fim": "2026-10-19"
+ },
+ "gads": {
+  "campanhas": "assets/demo/dados/campanhas.csv",
+  "grupos": "assets/demo/dados/grupos.csv",
+  "palavras_chave": "assets/demo/dados/palavras-chave.csv",
+  "termos": "assets/demo/dados/termos-de-pesquisa.csv"
+ },
+ "referencia": {
+  "rotulo": "Setembro",
+  "fonte": "planilha de resultados do cliente",
+  "custo": 5300.0,
+  "cliques": 1560,
+  "conversoes": 470
+ },
+ "campanha_marca": "Institucional",
+ "regex": {
+  "marca": "net ?exemplo",
+  "concorrentes": "\\bvivo\\b|\\bclaro\\b|\\btim\\b|\\boi\\b|concorrente local",
+  "fora_area": "cidade omega|cidade sigma",
+  "cidades": {
+   "Cidade Alfa": "cidade alfa",
+   "Cidade Beta": "cidade beta",
+   "Cidade Gama": "cidade gama",
+   "Cidade Delta": "cidade delta"
+  },
+  "locais_extra": "\\brj\\b"
+ },
+ "vendas": {
+  "janela": {
+   "inicio": "2026-10-01",
+   "fim": "2026-10-17"
+  },
+  "fracao_gasto": 0.886,
+  "leads": {
+   "csv": "assets/demo/dados/leads.csv",
+   "sep": ",",
+   "formatos_data": [
+    "%Y-%m-%d %H:%M:%S",
+    "%d/%m/%Y%H:%M:%S",
+    "%d/%m/%Y %H:%M:%S",
+    "%d/%m/%Y"
+   ],
+   "colunas": {
+    "data": "DATA E HORÁRIO  DE ENTRADA",
+    "nome": "NOME",
+    "telefone": "TELEFONE",
+    "status": "STATUS",
+    "cidade": "CIDADE",
+    "campanha": "UTM:CAMPANHA",
+    "grupo": "UTM:PÚBLICO",
+    "anuncio": "UTM:CRIATIVO",
+    "termo": "UTM TERM"
+   }
+  },
+  "crm": {
+   "csv": "assets/demo/dados/crm-vendas.csv",
+   "sep": ";",
+   "colunas": {
+    "telefone": "Telefone",
+    "tipo": "Tipo Relatório",
+    "contrato": "Status Contrato",
+    "cidade": "Cidade"
+   },
+   "prioridade_tipos": [
+    "NEGOCIAÇÕES VENCEMOS",
+    "NEGOCIAÇÕES EM ANDAMENTO",
+    "NEGOCIAÇÕES PERDEMOS",
+    "LEADS VIÁVEIS SEM PROSPECÇÃO",
+    "LEADS SEM ENDEREÇO OU VIABILIDADE CONFIRMADA",
+    "LEADS SEM VIABILIDADE"
+   ],
+   "estados": {
+    "venda": [
+     {
+      "onde": {
+       "Tipo Relatório": [
+        "NEGOCIAÇÕES VENCEMOS"
+       ],
+       "!Status Contrato": [
+        "Desistiu"
+       ]
+      }
+     }
+    ],
+    "desq": [
+     {
+      "onde": {
+       "Tipo Relatório": [
+        "NEGOCIAÇÕES VENCEMOS"
+       ],
+       "Status Contrato": [
+        "Desistiu"
+       ]
+      },
+      "motivo": "Fechou e desistiu antes de ativar"
+     },
+     {
+      "onde": {
+       "Tipo Relatório": [
+        "LEADS SEM VIABILIDADE"
+       ]
+      },
+      "motivo": "Sem viabilidade técnica no endereço"
+     },
+     {
+      "onde": {
+       "Tipo Relatório": [
+        "LEADS SEM ENDEREÇO OU VIABILIDADE CONFIRMADA"
+       ]
+      },
+      "motivo_col": "Segmento",
+      "motivo_padrao": "Sem endereço ou viabilidade não confirmada"
+     },
+     {
+      "onde": {
+       "Tipo Relatório": [
+        "NEGOCIAÇÕES PERDEMOS"
+       ]
+      },
+      "motivo_col": "Motivo Perdemos",
+      "motivo_padrao": "(sem motivo informado)"
+     }
+    ],
+    "aberto": [
+     {
+      "onde": {
+       "Tipo Relatório": [
+        "NEGOCIAÇÕES EM ANDAMENTO",
+        "LEADS VIÁVEIS SEM PROSPECÇÃO"
+       ]
+      }
+     }
+    ]
+   }
+  },
+  "mapa_campanhas": {
+   "institucional": "Institucional",
+   "core": "Campanha Core"
+  },
+  "mapa_grupos": {
+   "marca": "Marca",
+   "internet-fibra": "Internet Fibra",
+   "provedor-internet": "Provedor de Internet"
+  }
+ }
+}

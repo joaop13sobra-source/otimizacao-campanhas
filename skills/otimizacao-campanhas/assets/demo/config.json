@@ -1,0 +1,53 @@
+{
+  "cliente": "Cliente Demo",
+  "crm": "Planilha do CRM (demonstração)",
+  "periodo": {"inicio": "2026-08-01", "fim": "2026-09-30"},
+  "etapas": {
+    "ordem": ["Novo Lead", "Em Atendimento", "MQL", "Reunião Agendada", "Proposta Enviada", "Venda ganha"],
+    "mql": "MQL",
+    "sql": "Reunião Agendada",
+    "venda": ["Venda ganha"],
+    "perdido": ["Venda perdida"],
+    "ignorar": [],
+    "rotulo_sql": "SQL",
+    "rotulo_venda": "Venda"
+  },
+  "leads": {
+    "arquivo": "dados/leads.csv",
+    "colunas": {
+      "nome": "Nome", "criado_em": "Criado em", "etapa_atual": "Etapa", "historico": "Histórico", "motivo_perda": "Motivo de perda",
+      "utm_source": "utm_source", "utm_campaign": "utm_campaign", "utm_medium": "utm_medium", "utm_content": "utm_content", "utm_term": "utm_term"
+    },
+    "separador_historico": "|"
+  },
+  "midia": {
+    "meta": {
+      "arquivo": "dados/meta.csv", "formato_numero": "us",
+      "colunas": {"campanha": "Nome da campanha", "grupo": "Nome do conjunto de anúncios", "anuncio": "Nome do anúncio", "invest": "Valor usado (BRL)"}
+    },
+    "google": {
+      "arquivo": "dados/google_anuncios.csv", "formato_numero": "br",
+      "colunas": {"campanha": "Campanha", "grupo": "Grupo de anúncios", "sufixo": "Sufixo do URL final", "invest": "Custo"},
+      "palavras": {
+        "arquivo": "dados/google_palavras.csv", "formato_numero": "br",
+        "colunas": {"palavra": "Palavra-chave", "campanha": "Campanha", "grupo": "Grupo de anúncios", "invest": "Custo"}
+      }
+    }
+  },
+  "utm": {
+    "meta": {"grupo": "utm_medium", "anuncio": "utm_content", "apelidos_campanha": {}, "apelidos_grupo": {}},
+    "google": {"grupo": "utm_medium", "anuncio": "utm_content", "palavra": "utm_term", "apelidos_campanha": {}, "apelidos_grupo": {}}
+  },
+  "agrupar_campanhas": {},
+  "excluir": {"leads_teste_regex": "\\bteste\\b", "origens_organicas": ["ig", "link_in_bio"], "campanhas_regex": ""},
+  "kommo": {"funis": [0], "utm_no_contato": false, "campo_motivo_perda": ""},
+  "conferir_total": {},
+  "notas": {
+    "selo": "Exemplo: dado fictício",
+    "geral": "",
+    "qualificacao": "Texto de leitura da rodada: o que escalar, o que cortar e por quê. <strong>Aceita HTML.</strong>",
+    "qualificados_perdidos": "Leitura de quem qualificou e não fechou: costuma ser follow-up comercial, não mídia.",
+    "desqualificacao": "",
+    "secoes_extras_geral": ""
+  }
+}
